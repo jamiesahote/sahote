@@ -31,7 +31,7 @@
   [./HeatConduction-Structure]
     type = MatPropDiffusion
     variable = Temperature
-    block = 'Structure'
+    block = 'Top_Structure Bottom_Structure'
     diffusivity = ThermalConductivity-304SS
   [../]
 
