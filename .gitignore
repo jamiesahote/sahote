@@ -15,7 +15,7 @@
 *.snm
 *.csv
 *.dylib
-*.so
+*.so*
 *.gitignore*
 *.vrb
 *.jou

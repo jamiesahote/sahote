@@ -1,7 +1,13 @@
 #include "SahoteApp.h"
 #include "Moose.h"
 #include "AppFactory.h"
-#include "ModulesApp.h"
+
+// Include kernel header files
+#include "RadiationHeatSource.h"
+#include "MatPropDiffusion.h"
+
+// Next come the materials
+#include "RadiationMaterial.h"
 
 template<>
 InputParameters validParams<SahoteApp>()
@@ -16,11 +22,9 @@ SahoteApp::SahoteApp(const std::string & name, InputParameters parameters) :
   srand(processor_id());
 
   Moose::registerObjects(_factory);
-  ModulesApp::registerObjects(_factory);
   SahoteApp::registerObjects(_factory);
 
   Moose::associateSyntax(_syntax, _action_factory);
-  ModulesApp::associateSyntax(_syntax, _action_factory);
   SahoteApp::associateSyntax(_syntax, _action_factory);
 }
 
@@ -37,6 +41,12 @@ SahoteApp::registerApps()
 void
 SahoteApp::registerObjects(Factory & factory)
 {
+  // Register kernels
+  registerKernel(RadiationHeatSource);
+  registerKernel(MatPropDiffusion);
+
+  // Register materials classes
+  registerMaterial(RadiationMaterial);
 }
 
 void
