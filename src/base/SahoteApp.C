@@ -6,6 +6,9 @@
 #include "RadiationHeatSource.h"
 #include "MatPropDiffusion.h"
 
+// Include auxkernel header files
+#include "BeamHeating.h"
+
 // Next come the materials
 #include "SahoteMaterial.h"
 
@@ -47,6 +50,9 @@ SahoteApp::registerObjects(Factory & factory)
   // Register kernels
   registerKernel(RadiationHeatSource);
   registerKernel(MatPropDiffusion);
+
+  // Register auxkernels
+  registerAux(BeamHeating);
 
   // Register materials classes
   registerMaterial(SahoteMaterial);

@@ -4,14 +4,14 @@
     dim = 3
     xmin = -10
     ymin = -10
-    zmin = -2.5
+    zmin = 0
     xmax = 10
     ymin = 10
-    zmin = 2.5
+    zmin = 5
 
     nx = 20
     ny = 20
-    nz = 20
+    nz = 5
 []
 
 [Variables]
@@ -23,26 +23,29 @@
 []
 
 [AuxVariables]
-  active = ''
+  [./HeatGenerationPerIon]
+    order = CONSTANT
+    family = MONOMIAL
+    initial_condition = 456
+  [../]
+
   [./HeatGeneration]
     order = CONSTANT
     family = MONOMIAL
-    initial_condition = 0
+    initial_condition = 456
   [../]
 []
 
 [Functions]
-  active = ''
   [./HeatGenerationFunction]
     type = PiecewiseLinear
     data_file = test.csv
     format = columns
-    axis = 2
+    axis = 1
   [../]
 []
 
 [Kernels]
-  active = 'HeatConduction'
   [./HeatConduction]
     type = MatPropDiffusion
     variable = Temperature
@@ -57,11 +60,17 @@
 []
 
 [AuxKernels]
-  active = ''
-  [./HeatGenerationRate]
+  [./IonicHeatGenerationRate]
     type = FunctionAux
-    variable = HeatGeneration
+    variable = HeatGenerationPerIon
     function = HeatGenerationFunction
+  [../]
+
+  [./HeatGenerationRate]
+    type = BeamHeating
+    variable = HeatGeneration
+    ionic_heating = HeatGenerationPerIon
+    beam_current = 2e-4		## Specify your total beam current in Amps
   [../]
 []
 
@@ -78,7 +87,7 @@
   [./Air]
     type = CRUDCoolantNeumannBC
     variable = Temperature
-    boundary = 'top bottom'
+    boundary = 'top'
     T_coolant = 300
     h_convection_coolant = 50
   [../]
