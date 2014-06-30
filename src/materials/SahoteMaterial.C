@@ -34,7 +34,7 @@ SahoteMaterial::SahoteMaterial(const std::string & name,
     :Material(name, parameters),
 
      // Get simple parameters from the input fil
-     _temperature(coupledValue("Temperature")),
+     _temperature(coupledValue("temperature")),
 
      // Parameters specifying material properties used for both structural/sample materials and cooling fluids
      _density(declareProperty<Real>("Density")),

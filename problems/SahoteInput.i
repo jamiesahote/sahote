@@ -1,6 +1,6 @@
 [Mesh]
-type = FileMesh
-file = Structure.e
+  type = FileMesh
+  file = Structure.e
 []
 
 [Variables]
@@ -24,7 +24,7 @@ file = Structure.e
     type = PiecewiseLinear
     data_file = test.csv
     format = columns
-    axis = 0
+    axis = 2
   [../]
 []
 
@@ -109,13 +109,13 @@ file = Structure.e
   [../]
 []
 
-[BCs]		
+[BCs]
   [./StructureAir]
     type = CRUDCoolantNeumannBC
     variable = Temperature
     boundary = 'Structure-Air'
-    T_coolant = 600
-    h_convection_coolant = 12000
+    T_coolant = 300
+    h_convection_coolant = 50
   [../]
 
   [./StructureCoolant]
