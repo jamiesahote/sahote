@@ -20,7 +20,7 @@ InputParameters validParams<SahoteMaterial>()
   InputParameters params = validParams<Material>();
   // These parameters are simple constants from the input file
   params.addRequiredCoupledVar("temperature", "The temperature for the simulation");
-  MooseEnum material_type("316SS, 304SS, 308LSS, 347SS, LAS, CS, Stellite, CuNi9010, Titanium, Inconel, Incoloy, Hastelloy, SA230, Graphite, T91, PE16, Na, Pb, ");
+  MooseEnum material_type("316SS, 304SS, 308LSS, 347SS, LAS, CS, Stellite, CuNi9010, Titanium, Inconel, Incoloy, Hastelloy, SA230, Graphite, T91, PE16, Na, Pb, Pb-Bi, KNO3, KCSN, Hg, Rb, Cs, Glycerine ");
   params.addParam<MooseEnum>("material_type",material_type,"This string specifies the material to return properties."); 
 
   // Many material properties scale with temperature (to be implemented later)
@@ -138,49 +138,49 @@ SahoteMaterial::computeQpProperties()
   }
   else if (_material_type == "SA230")
   {
-     _density[_qp] = 8.97; //at room temp //in g/cm^2
-     _specific_heat_capacity[_qp] = 397; //at room temp //in J/kgK
-     _thermal_conductivity[_qp] = 8.97; //at room temp //in W/mK
+     _density[_qp] = 8.97; //at 298 K //in g/cm^2
+     _specific_heat_capacity[_qp] = 397; //at 298 K //in J/kgK
+     _thermal_conductivity[_qp] = 8.97; //at 298 K //in W/mK
   }
   else if (_material_type == "Graphite")
   {
      _density[_qp] = 1.76; //in g/cm^2
-     _specific_heat_capacity[_qp] = 737.2; //-1382 between 300-600 deg C HOW?? //in J/kgK
-     _thermal_conductivity[_qp] = 81.4; // at 400 deg C //in W/mK
+     _specific_heat_capacity[_qp] = 2.1493333333 * _temperature[_qp] - 494.368; //in J/kgK
+     _thermal_conductivity[_qp] = 81.4; // at 673 K //in W/mK
   }
   else if (_material_type == "T91")
   {
-     _density[_qp] = 7.64; //-7.55 between 300-600 deg C HOW??//in g/cm^2
-     _specific_heat_capacity[_qp] = 560.3; //-742.5 between 300-600 deg C HOW?? //in J/kgK
+     _density[_qp] = -0.0003 * _temperature[_qp] + 7.8119; //in g/cm^2
+     _specific_heat_capacity[_qp] = 0.6073333333 * _temperature[_qp] + 212.298; //in J/kgK
      _thermal_conductivity[_qp] = 28.84; //-28.54 between 300-600 deg C HOW?? //in W/mK
   }
   else if (_material_type == "PE16")
   {
      _density[_qp] = 8.0; //in g/cm^2
      _specific_heat_capacity[_qp] = 544; //between 20-400 deg C HOW?? //in J/kgK
-     _thermal_conductivity[_qp] = 16.75; //-21.35 between 300-600 deg C HOW?? //in W/mK
+     _thermal_conductivity[_qp] = 2.3788666667 * _temperature[_qp] - 1334.2506; //in W/mK
   }
   else if (_material_type == "Na")
   {
      _density[_qp] = 0.845; //in g/cm^2
-     _specific_heat_capacity[_qp] = 1269; //at 450 deg C //in J/kgK
-     _thermal_conductivity[_qp] = 68.88; //at 450 deg C //in W/mK
-     _boiling_point[_qp] = 883; // in deg C
-     _melting_point[_qp] = 98; //in deg C
-     _dynamic_viscosity[_qp] = 0.3; //at 450 deg C //in mPa-s
-     _surface_tension[_qp] = 163; //at 450 deg C //in mN/m
+     _specific_heat_capacity[_qp] = 1269; //at 723 K //in J/kgK
+     _thermal_conductivity[_qp] = 68.88; //at 723 K //in W/mK
+     _boiling_point[_qp] = 1156; // in K
+     _melting_point[_qp] = 371; //in K
+     _dynamic_viscosity[_qp] = 0.3; //at 723 K //in mPa-s
+     _surface_tension[_qp] = 163; //at 723 K //in mN/m
      _latent_heat_of_vapourisation[_qp] = 3871; //in kJ/kg
   }
   else if (_material_type == "Pb")
   {
-     _density[_qp] = 8.0; //in g/cm^2
-     _specific_heat_capacity[_qp] = 544; //between 20-400 deg C HOW?? //in J/kgK
-     _thermal_conductivity[_qp] = 16.75; //-21.35 between 300-600 deg C HOW?? //in W/mK
-     _boiling_point[_qp] = 1; // in deg C
-     _melting_point[_qp] = 1; //in deg C
-     _dynamic_viscosity[_qp] = 1; //in mPa-s
-     _surface_tension[_qp] = 1; //in mN/m
-     _latent_heat_of_vapourisation[_qp] = 1; //in kJ/kg
+     _density[_qp] = 10.52; //at 723 K //in g/cm^2
+     _specific_heat_capacity[_qp] = 147300; //at 723 K //in J/kgK
+     _thermal_conductivity[_qp] =17.1; //at 723 K //in W/mK
+     _boiling_point[_qp] = 1745; // in K
+     _melting_point[_qp] = 327.4; //in K
+     _dynamic_viscosity[_qp] = 0.19; //at 723 K //in mPa-s
+     _surface_tension[_qp] = 480; //at 723 K //in mN/m
+     _latent_heat_of_vapourisation[_qp] = 856.8; //in kJ/kg
   }
 else if (_material_type == "KNO3")
   {
@@ -193,81 +193,81 @@ else if (_material_type == "KNO3")
      _surface_tension[_qp] = 111; //between 340-550 deg C //in mN/m
      _latent_heat_of_vapourisation[_qp] = 50.6; //in kJ/kg
   }
-else if (_material_type == "Na")
+else if (_material_type == "Bi")
   {
-     _density[_qp] = 8.0; //in g/cm^2
-     _specific_heat_capacity[_qp] = 544; //between 20-400 deg C HOW?? //in J/kgK
-     _thermal_conductivity[_qp] = 16.75; //-21.35 between 300-600 deg C HOW?? //in W/mK
-     _boiling_point[_qp] = 1;// in deg C
-     _melting_point[_qp] = 1;//in deg C
-     _dynamic_viscosity[_qp] = 1;//in mPa-s
-     _surface_tension[_qp] = 1;//in mN/m
-     _latent_heat_of_vapourisation[_qp] = 1;//in kJ/kg
+     _density[_qp] = 9.85; //at 723 K//in g/cm^2
+     _specific_heat_capacity[_qp] = 150000; //at 723 K //in J/kgK
+     _thermal_conductivity[_qp] = 14.2; //at 723 K //in W/mK
+     _boiling_point[_qp] = 1552; // in K
+     _melting_point[_qp] = 271.4; //in K
+     _dynamic_viscosity[_qp] = 0.13; //at 723 K //in mPa-s
+     _surface_tension[_qp] = 370; //at 723 K //in mN/m
+     _latent_heat_of_vapourisation[_qp] = 852; //in kJ/kg
   }
-else if (_material_type == "Na")
+else if (_material_type == "Pb-Bi")
   {
-     _density[_qp] = 8.0; //in g/cm^2
-     _specific_heat_capacity[_qp] = 544; //between 20-400 deg C HOW?? //in J/kgK
-     _thermal_conductivity[_qp] = 16.75; //-21.35 between 300-600 deg C HOW?? //in W/mK
-     _boiling_point[_qp] = 1; // in deg C
-     _melting_point[_qp] = 1;//in deg C
-     _dynamic_viscosity[_qp] = 1;//in mPa-s
-     _surface_tension[_qp] = 1;//in mN/m
-     _latent_heat_of_vapourisation[_qp] = 1;//in kJ/kg
+     _density[_qp] = 10.15; //at 723 K //in g/cm^2
+     _specific_heat_capacity[_qp] = 146000; //at 723 K //in J/kgK
+     _thermal_conductivity[_qp] = 14.2; //at 723 K //in W/mK
+     _boiling_point[_qp] = 1670; // in K
+     _melting_point[_qp] = 125;//in K
+     _dynamic_viscosity[_qp] = 0.14; //at 723 K //in mPa-s
+     _surface_tension[_qp] = 392; //at 723 K //in mN/m
+     _latent_heat_of_vapourisation[_qp] = 852; //in kJ/kg
   }
-else if (_material_type == "Na")
+else if (_material_type == "Hg")
   {
-     _density[_qp] = 8.0; //in g/cm^2
-     _specific_heat_capacity[_qp] = 544; //between 20-400 deg C HOW?? //in J/kgK
-     _thermal_conductivity[_qp] = 16.75; //-21.35 between 300-600 deg C HOW?? //in W/mK
-     _boiling_point[_qp] = 1;// in deg C
-     _melting_point[_qp] = 1;//in deg C
-     _dynamic_viscosity[_qp] = 1;//in mPa-s
-     _surface_tension[_qp] = 1;//in mN/m
-     _latent_heat_of_vapourisation[_qp] = 1;//in kJ/kg
+     _density[_qp] = 13.53; //in g/cm^2
+     _specific_heat_capacity[_qp] = 135.25; //in J/kgK
+     _thermal_conductivity[_qp] = 10.05; //at 673 K //in W/mK
+     _boiling_point[_qp] = 629.62; // in K
+     _melting_point[_qp] = 507.17;//in K
+     _dynamic_viscosity[_qp] = 0.85; //at 723 K //in mPa-s
+     _surface_tension[_qp] = 424.8; //at 523 K //in mN/m
+     _latent_heat_of_vapourisation[_qp] = 58.2; //literature value give up to 59.2, lower value is taken //in kJ/kg
   }
-else if (_material_type == "Na")
+else if (_material_type == "Glycerine")
   {
-     _density[_qp] = 8.0; //in g/cm^2
-     _specific_heat_capacity[_qp] = 544; //between 20-400 deg C HOW?? //in J/kgK
-     _thermal_conductivity[_qp] = 16.75; //-21.35 between 300-600 deg C HOW?? //in W/mK
-     _boiling_point[_qp] = 1;// in deg C
-     _melting_point[_qp] = 1;//in deg C
-     _dynamic_viscosity[_qp] = 1;//in mPa-s
-     _surface_tension[_qp] = 1;//in mN/m
-     _latent_heat_of_vapourisation[_qp] = 1;//in kJ/kg
+     _density[_qp] = 1.060; //in g/cm^2
+     _specific_heat_capacity[_qp] = 2407.4; //at 553 K- literatue values give up to 2426.3, lower value is taken //in J/kgK
+     _thermal_conductivity[_qp] = 0.285; //at 353 K //in W/mK
+     _boiling_point[_qp] = 563; // in K
+     _melting_point[_qp] = 291.2; //in K
+     _dynamic_viscosity[_qp] = 14.8; //at 373 k //in mPa-s
+     _surface_tension[_qp] = 634; //in mN/m
+     _latent_heat_of_vapourisation[_qp] = 652.59;//in kJ/kg
   }
-else if (_material_type == "Na")
+else if (_material_type == "KCSN")
   {
-     _density[_qp] = 8.0; //in g/cm^2
-     _specific_heat_capacity[_qp] = 544; //between 20-400 deg C HOW?? //in J/kgK
-     _thermal_conductivity[_qp] = 16.75; //-21.35 between 300-600 deg C HOW?? //in W/mK
-     _boiling_point[_qp] = 1;// in deg C
-     _melting_point[_qp] = 1;//in deg C
-     _dynamic_viscosity[_qp] = 1;//in mPa-s
-     _surface_tension[_qp] = 1;//in mN/m
-     _latent_heat_of_vapourisation[_qp] = 1;//in kJ/kg
+     _density[_qp] = 1.88; //in g/cm^2
+     _specific_heat_capacity[_qp] = 910; //at 298.15 K //in J/kgK
+     _thermal_conductivity[_qp] = 1; // no value found in literature for KCSN //in W/mK
+     _boiling_point[_qp] = 773 ; // in K
+     _melting_point[_qp] = 446; //in K
+     _dynamic_viscosity[_qp] = 11.8; //at 723 K //in mPa-s
+     _surface_tension[_qp] = 91.87; //at 723 K //in mN/m
+     _latent_heat_of_vapourisation[_qp] = 6.07;//in kJ/kg
   }
-else if (_material_type == "Na")
+else if (_material_type == "Rb")
   {
-     _density[_qp] = 8.0; //in g/cm^2
-     _specific_heat_capacity[_qp] = 544; //between 20-400 deg C HOW?? //in J/kgK
-     _thermal_conductivity[_qp] = 16.75; //-21.35 between 300-600 deg C HOW?? //in W/mK
-     _boiling_point[_qp] = 1;// in deg C
-     _melting_point[_qp] = 1;//in deg C
-     _dynamic_viscosity[_qp] = 1;//in mPa-s
-     _surface_tension[_qp] = 1;//in mN/m
-     _latent_heat_of_vapourisation[_qp] = 1;//in kJ/kg
+     _density[_qp] = 1.53; //in g/cm^2
+     _specific_heat_capacity[_qp] = 363; ///in J/kgK
+     _thermal_conductivity[_qp] = 58.2; //in W/mK
+     _boiling_point[_qp] = 815; // in K
+     _melting_point[_qp] = 312.3;//in deg C
+     _dynamic_viscosity[_qp] = 0.143; //at 815 K //in mPa-s
+     _surface_tension[_qp] = 51; //at 823 K //in mN/m
+     _latent_heat_of_vapourisation[_qp] = 887.46;//in kJ/kg
   }
-else if (_material_type == "Na")
+else if (_material_type == "Cs")
   {
-     _density[_qp] = 8.0; //in g/cm^2
-     _specific_heat_capacity[_qp] = 544; //between 20-400 deg C HOW?? //in J/kgK
-     _thermal_conductivity[_qp] = 16.75; //-21.35 between 300-600 deg C HOW?? //in W/mK
-     _boiling_point[_qp] = 1;// in deg C
-     _melting_point[_qp] = 1;//in deg C
-     _dynamic_viscosity[_qp] = 1;//in mPa-s
-     _surface_tension[_qp] = 1;//in mN/m
-     _latent_heat_of_vapourisation[_qp] = 1;//in kJ/kg
+     _density[_qp] = 1.873; //in g/cm^2
+     _specific_heat_capacity[_qp] = 237.78; //at 571 K and above //in J/kgK
+     _thermal_conductivity[_qp] = 21.53; //at 773 K //in W/mK
+     _boiling_point[_qp] = 944; // in K
+     _melting_point[_qp] = 301.5; //in K
+     _dynamic_viscosity[_qp] = 0.28; //at 773 K //in mPa-s
+     _surface_tension[_qp] = 50.98; //at 811 K //in mN/m
+     _latent_heat_of_vapourisation[_qp] =494.321; //at 944 K //in kJ/kg
   }
 }
