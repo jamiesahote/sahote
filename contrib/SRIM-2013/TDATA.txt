@@ -1,0 +1,150 @@
+====== H (10) into Top Structure-316SS+Coolant- =======
+        SRIM-2013.00
+=======================================
+      Data  of  TRIM  Calculation      
+=======================================
+====== TRIM Calc.=  H(40 MeV) ==> Top Structure-316SS+Cool(  5 mm) ===========
+------------------------------------------------------------------------------
+--------------------------------------------------------------------
+    Recoil/Damage Calculations made with Kinchin-Pease Estimates    
+--------------------------------------------------------------------
+Ion =  H ( 1)   Ion Mass= 001.0080
+Energy  = 4000000.E-02 keV
+Ion Angle to Surface = 0 degrees
+============= TARGET MATERIAL ======================================
+  Layer # 1 - Top Structure-316SS
+  Layer # 1 - Bottom Depth=     1.E+07 A
+  Layer # 1- Density = 8.592E22 atoms/cm3 = 7.99 g/cm3
+  Layer # 1-  C = .080 Atomic Percent = 1.72 Mass Percent
+  Layer # 1- Mo = 2.00 Atomic Percent = 3.43 Mass Percent
+  Layer # 1- Mn = 2.00 Atomic Percent = 1.96 Mass Percent
+  Layer # 1-  P = .045 Atomic Percent = .024 Mass Percent
+  Layer # 1-  S = .030 Atomic Percent = 1.72 Mass Percent
+  Layer # 1- Si = .752 Atomic Percent = .377 Mass Percent
+  Layer # 1- Cr = 16.0 Atomic Percent = 14.8 Mass Percent
+  Layer # 1- Ni = 10.0 Atomic Percent = 10.5 Mass Percent
+  Layer # 1-  N = .100 Atomic Percent = 2.50 Mass Percent
+  Layer # 1- Fe = 68.9 Atomic Percent = 68.7 Mass Percent
+====================================================================
+  Layer # 2 - Coolant-KNO3
+  Layer # 2 - Bottom Depth=     2.E+07 A
+  Layer # 2- Density = 6.269E22 atoms/cm3 = 2.105 g/cm3
+  Layer # 2-  K = 20   Atomic Percent = 38.6 Mass Percent
+  Layer # 2-  N = 20   Atomic Percent = 13.8 Mass Percent
+  Layer # 2-  O = 60   Atomic Percent = 47.4 Mass Percent
+====================================================================
+  Layer # 3 - Sample-Ti
+  Layer # 3 - Bottom Depth=     3.E+07 A
+  Layer # 3- Density = 5.680E22 atoms/cm3 = 4.51 g/cm3
+  Layer # 3-  C = .080 Atomic Percent = 2.02 Mass Percent
+  Layer # 3- Fe = .201 Atomic Percent = .235 Mass Percent
+  Layer # 3-  H = .015 Atomic Percent = 3.18 Mass Percent
+  Layer # 3-  N = .030 Atomic Percent = 8.84 Mass Percent
+  Layer # 3-  O = .181 Atomic Percent = .060 Mass Percent
+  Layer # 3- Ti = 99.4 Atomic Percent = 99.6 Mass Percent
+====================================================================
+  Layer # 4 - Coolant-KNO3
+  Layer # 4 - Bottom Depth=     4.E+07 A
+  Layer # 4- Density = 6.269E22 atoms/cm3 = 2.105 g/cm3
+  Layer # 4-  K = 20   Atomic Percent = 38.6 Mass Percent
+  Layer # 4-  N = 20   Atomic Percent = 13.8 Mass Percent
+  Layer # 4-  O = 60   Atomic Percent = 47.4 Mass Percent
+====================================================================
+  Layer # 5 - Bottom Structure-316SS
+  Layer # 5 - Bottom Depth=     5.E+07 A
+  Layer # 5- Density = 8.592E22 atoms/cm3 = 7.99 g/cm3
+  Layer # 5-  C = .080 Atomic Percent = 1.72 Mass Percent
+  Layer # 5- Mo = 2.00 Atomic Percent = 3.43 Mass Percent
+  Layer # 5- Mn = 2.00 Atomic Percent = 1.96 Mass Percent
+  Layer # 5-  P = .045 Atomic Percent = .024 Mass Percent
+  Layer # 5-  S = .030 Atomic Percent = 1.72 Mass Percent
+  Layer # 5- Si = .752 Atomic Percent = .377 Mass Percent
+  Layer # 5- Cr = 16.0 Atomic Percent = 14.8 Mass Percent
+  Layer # 5- Ni = 10.0 Atomic Percent = 10.5 Mass Percent
+  Layer # 5-  N = .100 Atomic Percent = 2.50 Mass Percent
+  Layer # 5- Fe = 68.9 Atomic Percent = 68.7 Mass Percent
+====================================================================
+Target energies for target atom =  C
+    Displacement = 28 eV, Binding = 3 eV, Surface = 7.41 eV
+Target energies for target atom = Mo
+    Displacement = 25 eV, Binding = 3 eV, Surface = 6.83 eV
+Target energies for target atom = Mn
+    Displacement = 25 eV, Binding = 3 eV, Surface = 2.98 eV
+Target energies for target atom =  P
+    Displacement = 25 eV, Binding = 3 eV, Surface = 3.27 eV
+Target energies for target atom =  S
+    Displacement = 25 eV, Binding = 3 eV, Surface = 2.88 eV
+Target energies for target atom = Si
+    Displacement = 15 eV, Binding = 2 eV, Surface = 4.7 eV
+Target energies for target atom = Cr
+    Displacement = 25 eV, Binding = 3 eV, Surface = 4.12 eV
+Target energies for target atom = Ni
+    Displacement = 25 eV, Binding = 3 eV, Surface = 4.46 eV
+Target energies for target atom =  N
+    Displacement = 28 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom = Fe
+    Displacement = 25 eV, Binding = 3 eV, Surface = 4.34 eV
+Target energies for target atom =  K
+    Displacement = 25 eV, Binding = 3 eV, Surface = 0.93 eV
+Target energies for target atom =  N
+    Displacement = 28 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom =  O
+    Displacement = 28 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom =  C
+    Displacement = 28 eV, Binding = 3 eV, Surface = 7.41 eV
+Target energies for target atom = Fe
+    Displacement = 25 eV, Binding = 3 eV, Surface = 4.34 eV
+Target energies for target atom =  H
+    Displacement = 10 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom =  N
+    Displacement = 28 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom =  O
+    Displacement = 28 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom = Ti
+    Displacement = 25 eV, Binding = 3 eV, Surface = 4.89 eV
+Target energies for target atom =  K
+    Displacement = 25 eV, Binding = 3 eV, Surface = 0.93 eV
+Target energies for target atom =  N
+    Displacement = 28 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom =  O
+    Displacement = 28 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom =  C
+    Displacement = 28 eV, Binding = 3 eV, Surface = 7.41 eV
+Target energies for target atom = Mo
+    Displacement = 25 eV, Binding = 3 eV, Surface = 6.83 eV
+Target energies for target atom = Mn
+    Displacement = 25 eV, Binding = 3 eV, Surface = 2.98 eV
+Target energies for target atom =  P
+    Displacement = 25 eV, Binding = 3 eV, Surface = 3.27 eV
+Target energies for target atom =  S
+    Displacement = 25 eV, Binding = 3 eV, Surface = 2.88 eV
+Target energies for target atom = Si
+    Displacement = 15 eV, Binding = 2 eV, Surface = 4.7 eV
+Target energies for target atom = Cr
+    Displacement = 25 eV, Binding = 3 eV, Surface = 4.12 eV
+Target energies for target atom = Ni
+    Displacement = 25 eV, Binding = 3 eV, Surface = 4.46 eV
+Target energies for target atom =  N
+    Displacement = 28 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom = Fe
+    Displacement = 25 eV, Binding = 3 eV, Surface = 4.34 eV
+====================================================================
+Depth Range of Tabulated Data=  000000.E+00  -  500000.E+02  Angstroms
+====================================================================
+Total Ions calculated =  010000
+Average Range         =   47239.E+03 Angstroms
+Average Straggling    =   76208.E+01 Angstroms
+Average Vacancy/Ion   =   14516.E-02
+====================================================================
+Total Backscattered Ions=  1 
+Total Transmitted Ions  =  0 
+====================================================================
+See files SRIM Outputs\*.txt for tables :
+   TDATA.txt    -- Details of the calculation.
+   RANGE.txt    -- Final distribution of Ions/Recoils
+   VACANCY.txt  -- Distribution of Vacancies
+   IONIZ.txt    -- Distribution of Ionization
+   PHONON.txt   -- Distribution of Phonons
+   E2RECOIL.txt -- Energy transferred to recoils
+   NOVAC.txt    -- Replacement collisions
+   LATERAL.txt  -- Lateral Spread of Ions

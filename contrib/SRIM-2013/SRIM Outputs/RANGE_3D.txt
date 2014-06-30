@@ -1,0 +1,208 @@
+============================== SRIM-2013.00 ==============================
+==============================================================================
+====== SRIM Outputs\RANGE_3D.txt : File of Final Ion Positions =====
+
+Ion =  H (01)   Ion Mass= 001.0080
+Energy  = 4000000.E-02 keV
+Ion Angle to Surface = 00.0 degrees
+==================== TARGET =======================
+  Layer # 1 - Top Structure-316SS
+  Layer # 1 - Bottom Depth=100000.E+02 A
+  Layer # 1 - Density =0007.9900 g/cm3
+  Layer # 1 -  0 % of  C
+  Layer # 1 -  2 % of Mo
+  Layer # 1 -  2 % of Mn
+  Layer # 1 -  0 % of  P
+  Layer # 1 -  0 % of  S
+  Layer # 1 -  1 % of Si
+  Layer # 1 -  16 % of Cr
+  Layer # 1 -  10 % of Ni
+  Layer # 1 -  0 % of  N
+  Layer # 1 -  69 % of Fe
+  Layer # 1 -  0 % of  K
+  Layer # 1 -  0 % of  N
+  Layer # 1 -  0 % of  O
+  Layer # 1 -  0 % of  C
+  Layer # 1 -  0 % of Fe
+  Layer # 1 -  0 % of  H
+  Layer # 1 -  0 % of  N
+  Layer # 1 -  0 % of  O
+  Layer # 1 -  0 % of Ti
+  Layer # 1 -  0 % of  K
+  Layer # 1 -  0 % of  N
+  Layer # 1 -  0 % of  O
+  Layer # 1 -  0 % of  C
+  Layer # 1 -  0 % of Mo
+  Layer # 1 -  0 % of Mn
+  Layer # 1 -  0 % of  P
+  Layer # 1 -  0 % of  S
+  Layer # 1 -  0 % of Si
+  Layer # 1 -  0 % of Cr
+  Layer # 1 -  0 % of Ni
+  Layer # 1 -  0 % of  N
+  Layer # 1 -  0 % of Fe
+様様様様様様様様様様様様様様様様様様様様様様様様様様
+  Layer # 2 - Coolant-KNO3
+  Layer # 2 - Bottom Depth=225000.E+02 A
+  Layer # 2 - Density =0002.1050 g/cm3
+  Layer # 2 -  0 % of  C
+  Layer # 2 -  0 % of Mo
+  Layer # 2 -  0 % of Mn
+  Layer # 2 -  0 % of  P
+  Layer # 2 -  0 % of  S
+  Layer # 2 -  0 % of Si
+  Layer # 2 -  0 % of Cr
+  Layer # 2 -  0 % of Ni
+  Layer # 2 -  0 % of  N
+  Layer # 2 -  0 % of Fe
+  Layer # 2 -  20 % of  K
+  Layer # 2 -  20 % of  N
+  Layer # 2 -  60 % of  O
+  Layer # 2 -  0 % of  C
+  Layer # 2 -  0 % of Fe
+  Layer # 2 -  0 % of  H
+  Layer # 2 -  0 % of  N
+  Layer # 2 -  0 % of  O
+  Layer # 2 -  0 % of Ti
+  Layer # 2 -  0 % of  K
+  Layer # 2 -  0 % of  N
+  Layer # 2 -  0 % of  O
+  Layer # 2 -  0 % of  C
+  Layer # 2 -  0 % of Mo
+  Layer # 2 -  0 % of Mn
+  Layer # 2 -  0 % of  P
+  Layer # 2 -  0 % of  S
+  Layer # 2 -  0 % of Si
+  Layer # 2 -  0 % of Cr
+  Layer # 2 -  0 % of Ni
+  Layer # 2 -  0 % of  N
+  Layer # 2 -  0 % of Fe
+様様様様様様様様様様様様様様様様様様様様様様様様様様
+  Layer # 3 - Sample-Ti
+  Layer # 3 - Bottom Depth=275000.E+02 A
+  Layer # 3 - Density =0004.5100 g/cm3
+  Layer # 3 -  0 % of  C
+  Layer # 3 -  0 % of Mo
+  Layer # 3 -  0 % of Mn
+  Layer # 3 -  0 % of  P
+  Layer # 3 -  0 % of  S
+  Layer # 3 -  0 % of Si
+  Layer # 3 -  0 % of Cr
+  Layer # 3 -  0 % of Ni
+  Layer # 3 -  0 % of  N
+  Layer # 3 -  0 % of Fe
+  Layer # 3 -  0 % of  K
+  Layer # 3 -  0 % of  N
+  Layer # 3 -  0 % of  O
+  Layer # 3 -  0 % of  C
+  Layer # 3 -  0 % of Fe
+  Layer # 3 -  0 % of  H
+  Layer # 3 -  0 % of  N
+  Layer # 3 -  0 % of  O
+  Layer # 3 -  99 % of Ti
+  Layer # 3 -  0 % of  K
+  Layer # 3 -  0 % of  N
+  Layer # 3 -  0 % of  O
+  Layer # 3 -  0 % of  C
+  Layer # 3 -  0 % of Mo
+  Layer # 3 -  0 % of Mn
+  Layer # 3 -  0 % of  P
+  Layer # 3 -  0 % of  S
+  Layer # 3 -  0 % of Si
+  Layer # 3 -  0 % of Cr
+  Layer # 3 -  0 % of Ni
+  Layer # 3 -  0 % of  N
+  Layer # 3 -  0 % of Fe
+様様様様様様様様様様様様様様様様様様様様様様様様様様
+  Layer # 4 - Coolant-KNO3
+  Layer # 4 - Bottom Depth=400000.E+02 A
+  Layer # 4 - Density =0002.1050 g/cm3
+  Layer # 4 -  0 % of  C
+  Layer # 4 -  0 % of Mo
+  Layer # 4 -  0 % of Mn
+  Layer # 4 -  0 % of  P
+  Layer # 4 -  0 % of  S
+  Layer # 4 -  0 % of Si
+  Layer # 4 -  0 % of Cr
+  Layer # 4 -  0 % of Ni
+  Layer # 4 -  0 % of  N
+  Layer # 4 -  0 % of Fe
+  Layer # 4 -  0 % of  K
+  Layer # 4 -  0 % of  N
+  Layer # 4 -  0 % of  O
+  Layer # 4 -  0 % of  C
+  Layer # 4 -  0 % of Fe
+  Layer # 4 -  0 % of  H
+  Layer # 4 -  0 % of  N
+  Layer # 4 -  0 % of  O
+  Layer # 4 -  0 % of Ti
+  Layer # 4 -  20 % of  K
+  Layer # 4 -  20 % of  N
+  Layer # 4 -  60 % of  O
+  Layer # 4 -  0 % of  C
+  Layer # 4 -  0 % of Mo
+  Layer # 4 -  0 % of Mn
+  Layer # 4 -  0 % of  P
+  Layer # 4 -  0 % of  S
+  Layer # 4 -  0 % of Si
+  Layer # 4 -  0 % of Cr
+  Layer # 4 -  0 % of Ni
+  Layer # 4 -  0 % of  N
+  Layer # 4 -  0 % of Fe
+様様様様様様様様様様様様様様様様様様様様様様様様様様
+  Layer # 5 - Bottom Structure-316SS
+  Layer # 5 - Bottom Depth=500000.E+02 A
+  Layer # 5 - Density =0007.9900 g/cm3
+  Layer # 5 -  0 % of  C
+  Layer # 5 -  0 % of Mo
+  Layer # 5 -  0 % of Mn
+  Layer # 5 -  0 % of  P
+  Layer # 5 -  0 % of  S
+  Layer # 5 -  0 % of Si
+  Layer # 5 -  0 % of Cr
+  Layer # 5 -  0 % of Ni
+  Layer # 5 -  0 % of  N
+  Layer # 5 -  0 % of Fe
+  Layer # 5 -  0 % of  K
+  Layer # 5 -  0 % of  N
+  Layer # 5 -  0 % of  O
+  Layer # 5 -  0 % of  C
+  Layer # 5 -  0 % of Fe
+  Layer # 5 -  0 % of  H
+  Layer # 5 -  0 % of  N
+  Layer # 5 -  0 % of  O
+  Layer # 5 -  0 % of Ti
+  Layer # 5 -  0 % of  K
+  Layer # 5 -  0 % of  N
+  Layer # 5 -  0 % of  O
+  Layer # 5 -  0 % of  C
+  Layer # 5 -  2 % of Mo
+  Layer # 5 -  2 % of Mn
+  Layer # 5 -  0 % of  P
+  Layer # 5 -  0 % of  S
+  Layer # 5 -  1 % of Si
+  Layer # 5 -  16 % of Cr
+  Layer # 5 -  10 % of Ni
+  Layer # 5 -  0 % of  N
+  Layer # 5 -  69 % of Fe
+様様様様様様様様様様様様様様様様様様様様様様様様様様
+                                            
+Ion       Depth  X   Lateral Y   Lateral Z  
+Number    (Angstrom) (Angstrom)  (Angstrom) 
+-------  ----------- ----------- -----------
+0000001   4.7228E+07  3.2110E+06  1.2247E+06
+0000002   4.7252E+07  1.4513E+05  1.0273E+05
+0000003   4.7341E+07  1.2000E+06  4.7336E+05
+0000004   4.7624E+07  1.6252E+06 -3.1301E+05
+0000005   4.7379E+07  2.1114E+06 -1.9127E+06
+0000006   4.7251E+07  2.0571E+05  1.4580E+05
+0000007   4.7167E+07  1.1294E+06  1.8138E+06
+0000008   4.7786E+07 -8.3861E+05 -4.1599E+05
+0000009   4.6918E+07  2.0970E+06 -8.7592E+04
+0000010   4.7134E+07 -7.7486E+04 -2.2882E+06
+0000011   4.7222E+07 -3.6876E+05 -1.2565E+06
+0000012   4.7608E+07 -5.5226E+05  1.7326E+06
+0000013   4.7220E+07 -1.2022E+06  2.1511E+06
+0000014   4.7599E+07 -5.6344E+05  1.0135E+06
+0000015   4.7658E+07 -1.1653E+06  1.3300E+06
+0000016   4.7380E+07 -1.3509E+06 -1.8534E+05

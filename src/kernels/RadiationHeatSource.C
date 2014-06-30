@@ -19,25 +19,24 @@ InputParameters validParams<RadiationHeatSource>()
 {
   InputParameters params = validParams<Kernel>();
   params.addRequiredCoupledVar("PrimarySource", "The primary source of this heat");
-  params.addCoupledVar("SecondarySource", 0, "The optional secondary source of this defect");
+  params.addCoupledVar("SecondarySource", 1, "The optional secondary source of this defect");
   return params;
 }
-
 
 RadiationHeatSource::RadiationHeatSource(const std::string & name,
                                    InputParameters parameters)
   :Kernel(name,parameters),
    _primary_source(coupledValue("PrimarySource")),
-   _secondary_source(coupledValue("SecondarySource")),
-   _intracascade_survival(getMaterialProperty<Real>("IntracascadeSurvivalMatProp"))
+   _secondary_source(coupledValue("SecondarySource"))
+
 {}
 
 Real
 RadiationHeatSource::computeQpResidual()
 {
   return -_test[_i][_qp]
-           * ((_intracascade_survival[_qp] * _primary_source[_qp])
-           + _secondary_source[_qp]); // Negative sign because positive source from weak form PDE
+           * _primary_source[_qp]
+           + _secondary_source[_qp]; // Negative sign because positive source from weak form PDE
 }
 
 Real

@@ -1,0 +1,59 @@
+#!python
+cubit.cmd('set node constraint on')
+cubit.cmd('reset')
+cubit.cmd('brick x 20 y 20 z 3')
+cubit.cmd('brick x 20 y 4 z 0.5')
+cubit.cmd('brick x 20 y 20 z 5')
+cubit.cmd('subtract volume 2  from volume 1   keep')
+cubit.cmd('delete volume 1')
+cubit.cmd('subtract volume 4 2 from volume 3 keep')
+cubit.cmd('delete volume 3')
+cubit.cmd('webcut volume 2  with cylinder radius 1.5 axis z')
+cubit.cmd('webcut volume all  with plane xplane offset 0 noimprint nomerge ')
+cubit.cmd('webcut volume all with plane zplane offset 0.25 noimprint nomerge')
+cubit.cmd('webcut volume all with plane zplane offset -0.25 noimprint nomerge')
+cubit.cmd('imprint tolerant volume all')
+cubit.cmd('merge all')
+cubit.cmd('surface 100 106 size 0.1')
+cubit.cmd('surface 100 106 scheme pave')
+cubit.cmd('mesh surface 100 106')
+cubit.cmd('volume 7 scheme sweep source surface 100 target surface 102 ')
+cubit.cmd('volume 14 scheme sweep source surface 106 target surface 104')
+cubit.cmd('mesh volume 7 14')
+cubit.cmd('curve 97 scheme pinpoint location 1 2 3 4 5 6 7 8 9.3 9.4 9.5 9.6 9.7 9.8 9.9 ')
+cubit.cmd('curve 100 scheme pinpoint location 0.1 0.2 0.3 0.4 0.5 0.6 0.7 2 3 4 5 6 7 8 9')
+cubit.cmd('surface 51 scheme pave')
+cubit.cmd('mesh surface 51 ')
+cubit.cmd('volume 2 scheme sweep source surface 51 target surface 53')
+cubit.cmd('mesh volume 2')
+cubit.cmd('curve 115 scheme pinpoint location 0.1 0.2 0.3 0.4 0.5 0.6 0.7 2 3 4 5 6 7 8 9 ')
+cubit.cmd('curve 116 scheme pinpoint location 1 2 3 4 5 6 7 8 9.3 9.4 9.5 9.6 9.7 9.8 9.9')
+cubit.cmd('surface 58 scheme pave')
+cubit.cmd('mesh surface 58 ')
+cubit.cmd('volume 8 scheme sweep source surface 58 target surface 56')
+cubit.cmd('mesh volume 8')
+cubit.cmd('volume 18 17 19 20 15 16 4 9 10 11 12 13 size 0.5')
+cubit.cmd('mesh volume 18 17 19 20')
+cubit.cmd('mesh volume 15 16 4 9')
+cubit.cmd('mesh volume 10 11 12 13')
+cubit.cmd('imprint tolerant volume all')
+cubit.cmd('merge all')
+cubit.cmd('block 1 volume 16 15 18 19 9 4 20 17')
+cubit.cmd('block 1 name "Coolant"')
+cubit.cmd('block 2 volume 10 12')
+cubit.cmd('block 2 name "Top_Structure"')
+cubit.cmd('block 3 volume 11 13')
+cubit.cmd('block 3 name "Bottom_Structure"')
+cubit.cmd('block 4 volume 8 2')
+cubit.cmd('block 4 name "Pincers"')
+cubit.cmd('block 5 volume 7 14')
+cubit.cmd('block 5 name "Sample"')
+cubit.cmd('sideset 1 surface 64 77 68 74')
+cubit.cmd('sideset 1 name "Structure-Coolant"')
+cubit.cmd('sideset 2 surface 58 59 51 60 56 49 53 50')
+cubit.cmd('sideset 2 name "Coolant-Pincer"')
+cubit.cmd('sideset 3 surface 100 106 102 104')
+cubit.cmd('sideset 3 name "Coolant-Sanple"')
+cubit.cmd('sideset 4 surface 93 81 94 87')
+cubit.cmd('sideset 4 name "Structure-Air"')
+cubit.cmd('export mesh "/home/jamie/Projects/Sahote/Structure.e" dimension 3 overwrite')

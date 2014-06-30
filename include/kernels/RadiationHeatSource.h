@@ -45,7 +45,6 @@ protected:
 
   VariableValue & _primary_source;
   VariableValue & _secondary_source;
-  MaterialProperty<Real> & _intracascade_survival;
 
 };
 #endif //RADIATIONHEATSOURCE_H

@@ -1,0 +1,178 @@
+====== H (10) into Top Structure-316SS+Coolant- =======
+        SRIM-2013.00
+==================================================
+      ION and final RECOIL ATOM Distributions     
+ See  SRIM Outputs\TDATA.txt for calculation details
+==================================================
+====== TRIM Calc.=  H(40 MeV) ==> Top Structure-316SS+Cool(  5 mm) ===========
+------------------------------------------------------------------------------
+--------------------------------------------------------------------
+    Recoil/Damage Calculations made with Kinchin-Pease Estimates    
+--------------------------------------------------------------------
+----------------------------------------------------------------
+  There are NO RECOILS unless a full TRIM calculation is made.   
+----------------------------------------------------------------
+See file :  SRIM Outputs\TDATA.txt   for details of calculation
+ Ion    =  H   Energy = 40000  keV
+============= TARGET MATERIAL ======================================
+Layer  1 : Top Structure-316SS
+Layer Width =     1.E+07 A   Layer # 1- Density = 8.592E22 atoms/cm3 = 7.99 g/cm3
+  Layer # 1-  C = .080 Atomic Percent = 1.72 Mass Percent
+  Layer # 1- Mo = 2.00 Atomic Percent = 3.43 Mass Percent
+  Layer # 1- Mn = 2.00 Atomic Percent = 1.96 Mass Percent
+  Layer # 1-  P = .045 Atomic Percent = .024 Mass Percent
+  Layer # 1-  S = .030 Atomic Percent = 1.72 Mass Percent
+  Layer # 1- Si = .752 Atomic Percent = .377 Mass Percent
+  Layer # 1- Cr = 16.0 Atomic Percent = 14.8 Mass Percent
+  Layer # 1- Ni = 10.0 Atomic Percent = 10.5 Mass Percent
+  Layer # 1-  N = .100 Atomic Percent = 2.50 Mass Percent
+  Layer # 1- Fe = 68.9 Atomic Percent = 68.7 Mass Percent
+Layer  2 : Coolant-KNO3
+Layer Width =     1.E+07 A   Layer # 2- Density = 6.269E22 atoms/cm3 = 2.105 g/cm3
+  Layer # 2-  K = 20   Atomic Percent = 38.6 Mass Percent
+  Layer # 2-  N = 20   Atomic Percent = 13.8 Mass Percent
+  Layer # 2-  O = 60   Atomic Percent = 47.4 Mass Percent
+Layer  3 : Sample-Ti
+Layer Width =     5.E+06 A   Layer # 3- Density = 5.680E22 atoms/cm3 = 4.51 g/cm3
+  Layer # 3-  C = .080 Atomic Percent = 2.02 Mass Percent
+  Layer # 3- Fe = .201 Atomic Percent = .235 Mass Percent
+  Layer # 3-  H = .015 Atomic Percent = 3.18 Mass Percent
+  Layer # 3-  N = .030 Atomic Percent = 8.84 Mass Percent
+  Layer # 3-  O = .181 Atomic Percent = .060 Mass Percent
+  Layer # 3- Ti = 99.4 Atomic Percent = 99.6 Mass Percent
+Layer  4 : Coolant-KNO3
+Layer Width =     1.E+07 A   Layer # 4- Density = 6.269E22 atoms/cm3 = 2.105 g/cm3
+  Layer # 4-  K = 20   Atomic Percent = 38.6 Mass Percent
+  Layer # 4-  N = 20   Atomic Percent = 13.8 Mass Percent
+  Layer # 4-  O = 60   Atomic Percent = 47.4 Mass Percent
+Layer  5 : Bottom Structure-316SS
+Layer Width =     1.E+07 A   Layer # 5- Density = 8.592E22 atoms/cm3 = 7.99 g/cm3
+  Layer # 5-  C = .080 Atomic Percent = 1.72 Mass Percent
+  Layer # 5- Mo = 2.00 Atomic Percent = 3.43 Mass Percent
+  Layer # 5- Mn = 2.00 Atomic Percent = 1.96 Mass Percent
+  Layer # 5-  P = .045 Atomic Percent = .024 Mass Percent
+  Layer # 5-  S = .030 Atomic Percent = 1.72 Mass Percent
+  Layer # 5- Si = .752 Atomic Percent = .377 Mass Percent
+  Layer # 5- Cr = 16.0 Atomic Percent = 14.8 Mass Percent
+  Layer # 5- Ni = 10.0 Atomic Percent = 10.5 Mass Percent
+  Layer # 5-  N = .100 Atomic Percent = 2.50 Mass Percent
+  Layer # 5- Fe = 68.9 Atomic Percent = 68.7 Mass Percent
+====================================================================
+ Total Ions calculated =10000.00
+ Ion Average Range =   472.4E+05 A   Straggling =   762.1E+03 A
+ Ion Lateral Range =   151.4E+04 A   Straggling =   218.5E+04 A
+ Ion Radial  Range =   237.8E+04 A   Straggling =   199.0E+04 A
+====================================================================
+ Transmitted Ions =;  Backscattered Ions =1
+ (These are not included in Skewne- and Kurtosis below.)
+
+ Range Skewne- = -022.5412  &= [-(X-Rp)^3]/[N*Straggle^3]
+ Range Kurtosis = 911.8902  &= [-(X-Rp)^4]/[N*Straggle^4]
+ Statistical definitions above are those used in VLSI implant modelling.
+====================================================================
+=================================================================
+  Table Distribution Units are >>>  (Atoms/cm3) / (Atoms/cm2)  <<<  
+=================================================================
+   DEPTH          H       Recoil     
+   (Ang.)       Ions     Distribution
+-----------  ----------  ------------
+500000.E+00  0.0000E+00  0.0000E+00
+100000.E+01  0.0000E+00  0.0000E+00
+150000.E+01  0.0000E+00  0.0000E+00
+200000.E+01  0.0000E+00  0.0000E+00
+250000.E+01  0.0000E+00  0.0000E+00
+300000.E+01  0.0000E+00  0.0000E+00
+350000.E+01  0.0000E+00  0.0000E+00
+400000.E+01  0.0000E+00  0.0000E+00
+450000.E+01  0.0000E+00  0.0000E+00
+500000.E+01  0.0000E+00  0.0000E+00
+550000.E+01  0.0000E+00  0.0000E+00
+600000.E+01  0.0000E+00  0.0000E+00
+650000.E+01  0.0000E+00  0.0000E+00
+700000.E+01  0.0000E+00  0.0000E+00
+750000.E+01  0.0000E+00  0.0000E+00
+800000.E+01  0.0000E+00  0.0000E+00
+850000.E+01  0.0000E+00  0.0000E+00
+900000.E+01  0.0000E+00  0.0000E+00
+950000.E+01  2.0000E-02  0.0000E+00
+100000.E+02  0.0000E+00  0.0000E+00
+105000.E+02  0.0000E+00  0.0000E+00
+110000.E+02  0.0000E+00  0.0000E+00
+115000.E+02  0.0000E+00  0.0000E+00
+120000.E+02  0.0000E+00  0.0000E+00
+125000.E+02  0.0000E+00  0.0000E+00
+130000.E+02  0.0000E+00  0.0000E+00
+135000.E+02  0.0000E+00  0.0000E+00
+140000.E+02  0.0000E+00  0.0000E+00
+145000.E+02  0.0000E+00  0.0000E+00
+150000.E+02  0.0000E+00  0.0000E+00
+155000.E+02  0.0000E+00  0.0000E+00
+160000.E+02  0.0000E+00  0.0000E+00
+165000.E+02  0.0000E+00  0.0000E+00
+170000.E+02  0.0000E+00  0.0000E+00
+175000.E+02  0.0000E+00  0.0000E+00
+180000.E+02  0.0000E+00  0.0000E+00
+185000.E+02  2.0000E-02  0.0000E+00
+190000.E+02  0.0000E+00  0.0000E+00
+195000.E+02  0.0000E+00  0.0000E+00
+200000.E+02  0.0000E+00  0.0000E+00
+205000.E+02  0.0000E+00  0.0000E+00
+210000.E+02  0.0000E+00  0.0000E+00
+215000.E+02  0.0000E+00  0.0000E+00
+220000.E+02  0.0000E+00  0.0000E+00
+225000.E+02  0.0000E+00  0.0000E+00
+230000.E+02  0.0000E+00  0.0000E+00
+235000.E+02  0.0000E+00  0.0000E+00
+240000.E+02  0.0000E+00  0.0000E+00
+245000.E+02  0.0000E+00  0.0000E+00
+250000.E+02  0.0000E+00  0.0000E+00
+255000.E+02  0.0000E+00  0.0000E+00
+260000.E+02  0.0000E+00  0.0000E+00
+265000.E+02  0.0000E+00  0.0000E+00
+270000.E+02  0.0000E+00  0.0000E+00
+275000.E+02  0.0000E+00  0.0000E+00
+280000.E+02  0.0000E+00  0.0000E+00
+285000.E+02  0.0000E+00  0.0000E+00
+290000.E+02  0.0000E+00  0.0000E+00
+295000.E+02  2.0000E-02  0.0000E+00
+300000.E+02  0.0000E+00  0.0000E+00
+305000.E+02  0.0000E+00  0.0000E+00
+310000.E+02  2.0000E-02  0.0000E+00
+315000.E+02  0.0000E+00  0.0000E+00
+320000.E+02  0.0000E+00  0.0000E+00
+325000.E+02  0.0000E+00  0.0000E+00
+330000.E+02  0.0000E+00  0.0000E+00
+335000.E+02  0.0000E+00  0.0000E+00
+340000.E+02  0.0000E+00  0.0000E+00
+345000.E+02  4.0000E-02  0.0000E+00
+350000.E+02  0.0000E+00  0.0000E+00
+355000.E+02  0.0000E+00  0.0000E+00
+360000.E+02  0.0000E+00  0.0000E+00
+365000.E+02  2.0000E-02  0.0000E+00
+370000.E+02  0.0000E+00  0.0000E+00
+375000.E+02  0.0000E+00  0.0000E+00
+380000.E+02  0.0000E+00  0.0000E+00
+385000.E+02  0.0000E+00  0.0000E+00
+390000.E+02  2.0000E-02  0.0000E+00
+395000.E+02  4.0000E-02  0.0000E+00
+400000.E+02  2.0000E-02  0.0000E+00
+405000.E+02  4.0000E-02  0.0000E+00
+410000.E+02  0.0000E+00  0.0000E+00
+415000.E+02  2.0000E-02  0.0000E+00
+420000.E+02  4.0000E-02  0.0000E+00
+425000.E+02  2.0000E-02  0.0000E+00
+430000.E+02  4.0000E-02  0.0000E+00
+435000.E+02  1.0000E-01  0.0000E+00
+440000.E+02  1.4000E-01  0.0000E+00
+445000.E+02  4.0000E-02  0.0000E+00
+450000.E+02  1.8000E-01  0.0000E+00
+455000.E+02  2.4000E-01  0.0000E+00
+460000.E+02  6.0000E-01  0.0000E+00
+465000.E+02  5.1400E+00  0.0000E+00
+470000.E+02  4.3700E+01  0.0000E+00
+475000.E+02  9.3160E+01  0.0000E+00
+480000.E+02  4.9180E+01  0.0000E+00
+485000.E+02  6.7000E+00  0.0000E+00
+490000.E+02  4.2000E-01  0.0000E+00
+495000.E+02  0.0000E+00  0.0000E+00
+500000.E+02  0.0000E+00  0.0000E+00

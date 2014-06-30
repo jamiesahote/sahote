@@ -7,7 +7,7 @@
 #include "MatPropDiffusion.h"
 
 // Next come the materials
-#include "RadiationMaterial.h"
+#include "SahoteMaterial.h"
 
 template<>
 InputParameters validParams<SahoteApp>()
@@ -46,7 +46,7 @@ SahoteApp::registerObjects(Factory & factory)
   registerKernel(MatPropDiffusion);
 
   // Register materials classes
-  registerMaterial(RadiationMaterial);
+  registerMaterial(SahoteMaterial);
 }
 
 void

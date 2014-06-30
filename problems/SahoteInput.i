@@ -1,12 +1,13 @@
 [Mesh]
-## Put your Cubit mesh here
+type = FileMesh
+file = Structure.e
 []
 
 [Variables]
   [./Temperature]
     order = FIRST
     family = LAGRANGE
-    initial_condition = 300
+    initial_condition = 298
   [../]
 []
 
@@ -21,7 +22,7 @@
 [Functions]
   [./HeatGenerationFunction]
     type = PiecewiseLinear
-    data_file = ___             ## Put the SRIM energy deposition file here
+    data_file = test.csv
     format = columns
     axis = 0
   [../]
@@ -32,28 +33,28 @@
     type = MatPropDiffusion
     variable = Temperature
     block = 'Top_Structure Bottom_Structure'
-    diffusivity = ThermalConductivity-304SS
+    diffusivity = ThermalConductivity
   [../]
 
   [./HeatConduction-Coolant]
     type = MatPropDiffusion
     variable = Temperature
     block = 'Coolant'
-    diffusivity = ThermalConductivity-KNO3
+    diffusivity = ThermalConductivity
   [../]
 
   [./HeatConduction-Pincers]
     type = MatPropDiffusion
     variable = Temperature
     block = 'Pincers'
-    diffusivity = ThermalConductivity-316SS
+    diffusivity = ThermalConductivity
   [../]
 
   [./HeatConduction-Sample]
     type = MatPropDiffusion
     variable = Temperature
     block = 'Sample'
-    diffusivity = ThermalConductivity-W
+    diffusivity = ThermalConductivity
   [../]
 
   [./RadiationHeatSource]
@@ -71,46 +72,74 @@
   [../]
 []
 
-[Materials]	## You'll have to write a SahoteMaterial class, copy from mine to start
-  [./SahoteMaterial]
+[Materials]
+  [./TopStructure]
     type = SahoteMaterial
+    block = 2
+    temperature = Temperature
+    material_type = 316SS
+  [../]
+
+  [./Coolant]
+   type = SahoteMaterial
+   block = 1
+   temperature = Temperature
+   material_type = KNO3
+  [../]
+
+  [./Pincers]
+   type = SahoteMaterial
+   block = 4
+   temperature = Temperature
+   material_type = 316SS
+  [../]
+
+  [./Sample]
+   type = SahoteMaterial
+   block = 5
+   temperature = Temperature
+   material_type = 304SS
+  [../]
+
+  [./BottomStructure]
+   type = SahoteMaterial
+   block = 3
+   temperature = Temperature
+   material_type = 316SS
   [../]
 []
 
-[BCs]		## You'll have to change these to match your problem
-  [./V-Surface]
-    type = DirichletBC
-    variable = Vacancies
-    boundary = 'left'
-    value = 0
+[BCs]		
+  [./StructureAir]
+    type = CRUDCoolantNeumannBC
+    variable = Temperature
+    boundary = 'Structure-Air'
+    T_coolant = 600
+    h_convection_coolant = 12000
   [../]
 
-  [./I-Surface]
-    type = DirichletBC
-    variable = Interstitials
-    boundary = 'left'
-    value = 0
+  [./StructureCoolant]
+    type = CRUDCoolantNeumannBC
+    variable = Temperature
+    boundary = 'Structure-Coolant'
+    T_coolant = 600
+    h_convection_coolant = 12000
   [../]
 
-  [./V-right]
-    type = DirichletBC
-    variable = Vacancies
-    boundary = 'right'
-    value = 0
+  [./CoolantSample]
+    type = CRUDCoolantNeumannBC
+    variable = Temperature
+    boundary = 'Coolant-Pincer'
+    T_coolant = 600
+    h_convection_coolant = 12000
   [../]
 
-  [./I-right]
-    type = DirichletBC
-    variable = Interstitials
-    boundary = 'right'
-    value = 0
-  [../]
-
-  [./Void-right]
-    type = DirichletBC
-    variable = Voids
-    boundary = 'right'
-    value = 0
+  [./CoolantPincer]
+    type = CRUDCoolantNeumannBC
+    variable = Temperature
+    boundary = 'Coolant-Sample'
+    T_coolant = 600
+    h_convection_coolant = 12000
   [../]
 []
 
