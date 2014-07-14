@@ -82,6 +82,7 @@
     variable = HeatGeneration
     ionic_heating = HeatGenerationPerIon
     beam_current = 2e-4		## Specify your total beam current in Amps
+    beam_radius = 0.003
   [../]
 []
 
