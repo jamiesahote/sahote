@@ -7,18 +7,18 @@ TRIM  Version  Number  /  Calculation Name
 ION DATA:At.Numb, Mass(amu), Energy (keV) , Angle to Target
           1     1.0080  4.0000E+04    00.0
 ION NUMB: Current, Total, AutoSave, Transmitted, Backscattered 
-        10000 10000  100    0    1
+        7 10000  100    0    0
 CURRENT ION: Energy(eV),  Depth (X,Y,Z), Trajectory: Cos(X,Y,Z), Sin(X)
-9.63652E-01 4.71288E+07 -1.94464E+06 1.55074E+06 0.677687 -0.075547 -0.731459 0.735350
+9.32643E+06 4.48415E+07 9.33337E+05 1.57886E+06 0.987164 0.063772 0.146426 0.159710
 ION AVGS:  Range,      Straggling,   Vacancies/Ion
-        4.7239E+07   7.6208E+05   1.4516E+02
+        4.7346E+07   1.3550E+05   1.8640E+02
 ION SUMS:  Range,Straggling,(Vacancies,Replacements,Interstitials)/Ang.
-4.72346E+011  2.23191E+019  1.05479E+027  4.98553E+034  2.90311E+000  0.00000E+000  0.00000E+000  0.00000E+000
+2.84075E+008  1.34499E+016  6.36806E+023  3.01508E+031  2.42180E-003  0.00000E+000  0.00000E+000  0.00000E+000
 Ion Y-Z Lateral Data :  Range, Straggling, Kurtosis, Radial Dev.
-1.51361E+010  4.77170E+016  2.37765E+010  9.61407E+016
-2.37788E+006  1.99015E+006  1.51376E+006  2.18453E+006  4.71288E+007
+8.49850E+006  1.89134E+013  9.66067E+006  2.44259E+013
+1.61011E+006  1.21594E+006  1.41642E+006  1.77545E+006  4.48131E+007
 Cascade Type, FileFLAGS: Sputter, Ranges, Backscatter, Transmit, Collisions, Random Seeds(2)
-  1 0 1 0 0 2 1 625957219 215080196
+  1 0 1 0 0 1 1 860457834 892580304
 TGT DATA: ------- Numb.Elements, Numb.Layers -----------------
                        32           5
 TGT DATA: Atomic Numb, Mass,  Disp., Binding, Surf. Energy(eV)
@@ -67,7 +67,7 @@ Total Sputtered Atoms and Energy (eV)     (Target Atoms 1 - 32  )
 Plot Display Start Depth (A), End Depth(A), Depth Resolution (Ang.)
  0             50000000      500000 
 Plotting Colors from TRIM.CFG
- 16777215      255           6             16777215      255           16777215      16777215      16777215      255           8388608       65280         16776960 
+ 16777215      255           6             65535         255           16777215      0             16711680      255           8388608       65280         16776960 
  16777215  4227327  15982183  16744703  16777088  13159423  16760769  8421376  6422724  8388736  4755857  9408399  16777215 
  255  837122  16417654  12519886  13814035  9673727  16711680  65280  12615935  16716287  8700353  12566463  255 
 Collision Plots and Plot Positions

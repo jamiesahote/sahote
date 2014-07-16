@@ -26,11 +26,13 @@
 []
 
 [Functions]
+ ## [./HeatGenerationFunction]
+ ##   type = ConstantFunction
+ ##   value = 5
+ ## [../]
   [./HeatGenerationFunction]
-    type = PiecewiseLinear
-    data_file = MOOSE-Ions.csv
-    format = columns
-    axis = 1
+    type = PiecewiseMultilinear
+    data_file = IonBeamEnergy.txt
   [../]
 []
 
@@ -82,7 +84,7 @@
     variable = HeatGeneration
     ionic_heating = HeatGenerationPerIon
     beam_current = 2e-4		## Specify your total beam current in Amps
-    beam_radius = 0.003
+    beam_radius = 0.003         ## Specify your beam radius in metres
   [../]
 []
 
@@ -171,11 +173,11 @@
   petsc_options_iname = '-pc_type -pc_hypre_type'
   petsc_options_value = 'hypre boomeramg'
 
-  l_max_its = 100
-  l_tol = 1e-5
+  l_max_its = 3
+  l_tol = 1e-3
   nl_rel_step_tol = 1e-50
-  nl_rel_tol = 1e-6
-  nl_abs_tol = 1e-11
+  nl_rel_tol = 1e-2
+  nl_abs_tol = 1e1
 
 #  [./Adaptivity]
 #    steps = 1

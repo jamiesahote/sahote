@@ -12,30 +12,30 @@ while read line; do
     string2=$energy
 done <$FILE
 
-rm IonBeamEnergy.txt
+##rm IonBeamEnergy.txt
 touch IonBeamEnergy.txt
 Rbeam=$(grep -r "beam_radius" ~/projects/sahote/problems/SahoteTest.i | awk '{print $3}')
 
 echo "Beam radius is "$Rbeam;
 
-echo "AXIS X" >> IonBeamEnergy.txt
-awk 'BEGIN{ for (i=-10; i <= 10; i+=0.5) printf("%.1f ", i); }' >> IonBeamEnergy.txt
-printf "\n" >> IonBeamEnergy.txt
-
-echo "AXIS Y" >> IonBeamEnergy.txt
-awk 'BEGIN{ for (i=-10; i <= 10; i+=0.5) printf("%.1f ", i); }' >> IonBeamEnergy.txt
-printf "\n" >> IonBeamEnergy.txt
-
 echo "AXIS Z" >> IonBeamEnergy.txt
 ##need to present string "range" rather than as a column, as a row of number seperated by a space
 while read line; do
-     range=$(echo $line | awk '{print ($1 / 10000000000)}')
-     printf "$range " >> IonBeamEnergy.txt
+     range=$(echo $line | awk '{print (($1 / 10000000000) - 0.0025)}')
+     printf "%.5f " $range >> IonBeamEnergy.txt
 done <$FILE
 printf "\n" >> IonBeamEnergy.txt
 
+echo "AXIS Y" >> IonBeamEnergy.txt
+awk 'BEGIN{ for (i=-0.01; i <= 0.0105; i+=0.0005) printf("%.4f ", i); }' >> IonBeamEnergy.txt
+printf "\n" >> IonBeamEnergy.txt
+
+echo "AXIS X" >> IonBeamEnergy.txt
+awk 'BEGIN{ for (i=-0.01; i <= 0.0105; i+=0.0005) printf("%.4f ", i); }' >> IonBeamEnergy.txt
+printf "\n" >> IonBeamEnergy.txt
+
 echo "DATA" >> IonBeamEnergy.txt
-##require a for loop which iterates between the x and y coordinates in the fashion of the piecewise multilinear data matrix input which states that if the coordinates are within the radius (Rbeam) pulled in above from the input file.
+##require a for loop which iterates between the x and y coordinates in the fashion of the piecewise multilinear data matrix input which states that if the coordinates are within the radius (Rbeam) pulled in above from the input file pull in the SRIM energies and if it is outside Rbeam, output 100 zeros
 
 for x in {-20..20}
 do
@@ -60,4 +60,4 @@ do
 done
 
 
-#mv IonBeamEnergy.txt /home/jamie/projects/sahote/problems
+mv IonBeamEnergy.txt /home/jamie/projects/sahote/problems
