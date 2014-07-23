@@ -152,7 +152,7 @@ SahoteMaterial::computeQpProperties()
   {
      _density[_qp] = -0.0003 * _temperature[_qp] + 7.8119; //in g/cm^2
      _specific_heat_capacity[_qp] = 0.6073333333 * _temperature[_qp] + 212.298; //in J/kgK
-     _thermal_conductivity[_qp] = 28.84; //-28.54 between 300-600 deg C HOW?? //in W/mK
+     _thermal_conductivity[_qp] = -0.0009966777 * _temperature[_qp] + 29.4110963455; //in W/mK
   }
   else if (_material_type == "PE16")
   {

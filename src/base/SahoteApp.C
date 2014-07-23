@@ -5,6 +5,7 @@
 // Include kernel header files
 #include "RadiationHeatSource.h"
 #include "MatPropDiffusion.h"
+#include "Convection.h"
 
 // Include auxkernel header files
 #include "BeamHeating.h"
@@ -50,6 +51,7 @@ SahoteApp::registerObjects(Factory & factory)
   // Register kernels
   registerKernel(RadiationHeatSource);
   registerKernel(MatPropDiffusion);
+  registerKernel(Convection);
 
   // Register auxkernels
   registerAux(BeamHeating);
