@@ -54,7 +54,7 @@
     type = Convection
     variable = Temperature
     block = Coolant
-    ##some_variable = Pressure
+    velocity = 1
   [../]
   [./HeatConduction-Pincers]
     type = MatPropDiffusion
