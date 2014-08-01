@@ -1,0 +1,11 @@
+#!/bin/bash
+
+    #PBS -l walltime=4:00:00
+    #PBS -l nice=19
+    #PBS -q default
+    #PBS -l nodes=2:ppn=16
+
+mpiexec seq 1 10 | awk '{print ".././sahote-opt -i SahoteTest.i 
+--Materials/Coolant/velocity="$1" --Outputs/file_base=out_velocity_"$1}'
+
+echo "end"
