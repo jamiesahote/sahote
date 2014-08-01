@@ -12,13 +12,6 @@
 /*            See COPYRIGHT for full restrictions               */
 /****************************************************************/
 
-// This file computes the true porosity of the CRUD, by starting
-// with the skeletal porosity handed down from MAMBA-MACRO. This
-// skeletal porosity is the porosity of the insoluble skeleton of
-// iron and nickel oxides.
-//
-// The porosity then decreases to a smaller value once soluble
-// species (such as HBO2) fill up the pores.
 
 #include "BeamHeating.h"
 

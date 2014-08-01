@@ -9,12 +9,14 @@
 
 // Include auxkernel header files
 #include "BeamHeating.h"
+#include "MaterialHeatAux.h"
 
 // Next come the materials
 #include "SahoteMaterial.h"
 
 // Next come the boundary conditions
 #include "CRUDCoolantNeumannBC.h"
+#include "CoolantNeumannBC.h"
 
 template<>
 InputParameters validParams<SahoteApp>()
@@ -55,12 +57,14 @@ SahoteApp::registerObjects(Factory & factory)
 
   // Register auxkernels
   registerAux(BeamHeating);
+  registerAux(MaterialHeatAux);
 
   // Register materials classes
   registerMaterial(SahoteMaterial);
 
   // Register boundary conditions
   registerBoundaryCondition(CRUDCoolantNeumannBC);
+  registerBoundaryCondition(CoolantNeumannBC);
 }
 
 void

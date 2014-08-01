@@ -40,10 +40,12 @@ public:
 protected:
   virtual Real computeQpResidual();
 
+  
 private:
 
   Real _T_coolant;
   Real _h_convection_coolant;
+
 };
 
 #endif //CRUDCOOLANTNEUMANNBC_H

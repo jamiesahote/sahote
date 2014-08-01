@@ -22,11 +22,12 @@
     family = LAGRANGE
     initial_condition = 0
   [../]
-##  [./Pressure]
-##    order = FIRST
-##    family = LAGRANGE
-##      initial_condition = 100000
+  [./HeatAux]
+    order = CONSTANT
+    family = MONOMIAL
+    initial_condition = 1
   [../]
+
 []
 
 [Functions]
@@ -34,11 +35,6 @@
     type = PiecewiseMultilinear
     data_file = IonBeamEnergy.txt
   [../]
-##  [./PressureFunction]
-##    type = ParsedFunction
-##    value = -467.0720000001 * p + 100000
-##    vars = p
-##  [../]
 []
 
 [Kernels]
@@ -92,11 +88,12 @@
     beam_current = 2e-6 # Specify your total beam current in Amps
     beam_radius = 0.003 # Specify your beam radius in metres
   [../]
-##  [./PressureAux]
-##    type = FunctionAux
-##    variable = Pressure
-##    function = PressureFunction
-##  [../]
+  [./HeatAux]
+    type = MaterialHeatAux
+    variable = HeatAux
+    velocity = 1
+    material_type = 316SS
+  [../]
 []
 
 [Materials]
@@ -105,6 +102,7 @@
     block = 2
     temperature = Temperature
     material_type = 316SS
+    velocity = 1
   [../]
   [./Coolant]
     type = SahoteMaterial
@@ -118,18 +116,21 @@
     block = 4
     temperature = Temperature
     material_type = 316SS
+    velocity = 1
   [../]
   [./Sample]
     type = SahoteMaterial
     block = 5
     temperature = Temperature
     material_type = 304SS
+    velocity = 1
   [../]
   [./BottomStructure]
     type = SahoteMaterial
     block = 3
     temperature = Temperature
     material_type = 316SS
+    velocity = 1
   [../]
 []
 
@@ -142,25 +143,25 @@
     h_convection_coolant = 50
   [../]
   [./StructureCoolant]
-    type = CRUDCoolantNeumannBC
+    type = CoolantNeumannBC
     variable = Temperature
     boundary = Structure-Coolant
-    T_coolant = 600
-    h_convection_coolant = 100
+    T_coolant = 500
+    heat_transfer_coefficient = HeatAux
   [../]
   [./CoolantSample]
-    type = CRUDCoolantNeumannBC
+    type = CoolantNeumannBC
     variable = Temperature
     boundary = Coolant-Pincer
-    T_coolant = 700
-    h_convection_coolant = 100
+    T_coolant = 500
+    heat_transfer_coefficient = HeatAux
   [../]
   [./CoolantPincer]
-    type = CRUDCoolantNeumannBC
+    type = CoolantNeumannBC
     variable = Temperature
     boundary = Coolant-Sample
-    T_coolant = 700
-    h_convection_coolant = 100
+    T_coolant = 500
+    heat_transfer_coefficient = HeatAux
   [../]
   [./CoolantEntry]
     type = DirichletBC
