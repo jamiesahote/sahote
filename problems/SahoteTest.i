@@ -54,7 +54,7 @@
     type = Convection
     variable = Temperature
     block = Coolant
-    some_variable = Pressure
+    ##some_variable = Pressure
   [../]
   [./HeatConduction-Pincers]
     type = MatPropDiffusion
@@ -92,7 +92,7 @@
     type = MaterialHeatAux
     variable = HeatAux
     velocity = 1
-    material_type = 316SS
+    material_type = KNO3
   [../]
 []
 
@@ -102,35 +102,35 @@
     block = 2
     temperature = Temperature
     material_type = 316SS
-    velocity = 1
+    ##velocity = 1
   [../]
   [./Coolant]
     type = SahoteMaterial
     block = 1
     temperature = Temperature
     material_type = KNO3
-    velocity = 1
+    ##velocity = 1
   [../]
   [./Pincers]
     type = SahoteMaterial
     block = 4
     temperature = Temperature
     material_type = 316SS
-    velocity = 1
+    ##velocity = 1
   [../]
   [./Sample]
     type = SahoteMaterial
     block = 5
     temperature = Temperature
     material_type = 304SS
-    velocity = 1
+    ##velocity = 1
   [../]
   [./BottomStructure]
     type = SahoteMaterial
     block = 3
     temperature = Temperature
     material_type = 316SS
-    velocity = 1
+    ##velocity = 1
   [../]
 []
 

@@ -42,7 +42,7 @@ private:
 
 // Simple parameters to be used all over
   VariableValue & _temperature;
-  Real _velocity;
+  //Real _velocity;
 
   
 
@@ -66,7 +66,7 @@ private:
   MaterialProperty<Real> & _dynamic_viscosity;
   MaterialProperty<Real> & _surface_tension;
   MaterialProperty<Real> & _latent_heat_of_vapourisation;
-  MaterialProperty<Real> & _heat_transfer_coefficient;
+  //MaterialProperty<Real> & _heat_transfer_coefficient;
 
   MooseEnum _material_type;
 
