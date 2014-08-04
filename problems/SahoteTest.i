@@ -33,7 +33,7 @@
 [Functions]
   [./HeatGenerationFunction]
     type = PiecewiseMultilinear
-    data_file = IonBeamEnergy.txt
+    data_file = /home/jsahote/projects/sahote/problems/IonBeamEnergy.txt
   [../]
 []
 
