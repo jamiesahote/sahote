@@ -7,6 +7,8 @@
 
 ##seq 1 10 | awk '{print "mpiexec ~/projects/sahote/sahote-opt -i ~/projects/sahote/problems/SahoteTest.i Materials/Coolant/velocity="$1" AuxKernels/HeatAux/##velocity="$1" Outputs/file_base=out_velocity_"$1}' | sh
 
-seq 3 9 | awk '{print "mpiexec ~/projects/sahote/sahote-opt -i ~/projects/sahote/problems/SahoteTest.i AuxKernels/HeatGenerationRate/beam_current=1e-"$1" Outputs/file_base=out_beam_current_"$1}' | sh
+seq 3 9 | awk '{print "mpiexec ~/projects/sahote/sahote-opt -i ~/projects/sahote/problems/SahoteTestbeamcurrent.i AuxKernels/HeatGenerationRate/beam_current=1e-"$1" Outputs/file_base=out_beam_current_"$1}' | sh
+
+
 
 echo "end"
