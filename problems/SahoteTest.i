@@ -197,7 +197,7 @@
 []
 
 [Outputs]
-  file_base = Sahote
+  file_base = /home/jsahote/projects/sahote/problems/Sahote
   exodus = true
   [./Console]
     type = Console
