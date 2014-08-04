@@ -1,6 +1,6 @@
 [Mesh]
   type = FileMesh
-  file = Structure.e
+  file = /home/jsahote/projects/sahote/problems/Structure.e
 []
 
 [Variables]
