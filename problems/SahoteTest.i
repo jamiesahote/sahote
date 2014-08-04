@@ -7,7 +7,7 @@
   [./Temperature]
     order = FIRST
     family = LAGRANGE
-    initial_condition = 700
+    initial_condition = 500
   [../]
 []
 
@@ -85,7 +85,7 @@
     type = BeamHeating
     variable = HeatGeneration
     ionic_heating = HeatGenerationPerIon
-    beam_current = 2e-6 # Specify your total beam current in Amps
+    beam_current = 1e-9 # Specify your total beam current in Amps
     beam_radius = 0.003 # Specify your beam radius in metres
   [../]
   [./HeatAux]
