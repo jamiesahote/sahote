@@ -1,6 +1,6 @@
 [Mesh]
   type = FileMesh
-  file = /home/jsahote/projects/sahote/problems/Structure.e
+  file = Structure.e
 []
 
 [Variables]
@@ -33,7 +33,7 @@
 [Functions]
   [./HeatGenerationFunction]
     type = PiecewiseMultilinear
-    data_file = /home/jsahote/projects/sahote/problems/IonBeamEnergy.txt
+    data_file = IonBeamEnergy.txt
   [../]
 []
 
