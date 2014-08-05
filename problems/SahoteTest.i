@@ -1,6 +1,6 @@
 [Mesh]
   type = FileMesh
-  file = /home/jsahote/projects/sahote/problems/Structure.e
+  file = Structure.e
 []
 
 [Variables]
@@ -33,7 +33,7 @@
 [Functions]
   [./HeatGenerationFunction]
     type = PiecewiseMultilinear
-    data_file = /home/jsahote/projects/sahote/problems/IonBeamEnergy.txt
+    data_file = IonBeamEnergy.txt
   [../]
 []
 
@@ -102,35 +102,30 @@
     block = 2
     temperature = Temperature
     material_type = 316SS
-    ##velocity = 1
   [../]
   [./Coolant]
     type = SahoteMaterial
     block = 1
     temperature = Temperature
     material_type = KNO3
-    ##velocity = 1
   [../]
   [./Pincers]
     type = SahoteMaterial
     block = 4
     temperature = Temperature
     material_type = 316SS
-    ##velocity = 1
   [../]
   [./Sample]
     type = SahoteMaterial
     block = 5
     temperature = Temperature
-    material_type = 304SS
-    ##velocity = 1
+    material_type = Titanium
   [../]
   [./BottomStructure]
     type = SahoteMaterial
     block = 3
     temperature = Temperature
     material_type = 316SS
-    ##velocity = 1
   [../]
 []
 
@@ -146,21 +141,21 @@
     type = CoolantNeumannBC
     variable = Temperature
     boundary = Structure-Coolant
-    T_coolant = 500
+    T_coolant = Temperature
     heat_transfer_coefficient = HeatAux
   [../]
   [./CoolantSample]
     type = CoolantNeumannBC
     variable = Temperature
     boundary = Coolant-Pincer
-    T_coolant = 500
+    T_coolant = Temperature
     heat_transfer_coefficient = HeatAux
   [../]
   [./CoolantPincer]
     type = CoolantNeumannBC
     variable = Temperature
     boundary = Coolant-Sample
-    T_coolant = 500
+    T_coolant = Temperature
     heat_transfer_coefficient = HeatAux
   [../]
   [./CoolantEntry]
@@ -197,7 +192,7 @@
 []
 
 [Outputs]
-  file_base = /home/jsahote/projects/sahote/problems/Sahote
+  file_base = Sahote
   exodus = true
   [./Console]
     type = Console

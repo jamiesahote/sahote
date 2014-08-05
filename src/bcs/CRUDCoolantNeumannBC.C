@@ -25,7 +25,7 @@ template<>
 InputParameters validParams<CRUDCoolantNeumannBC>()
 {
   InputParameters params = validParams<IntegratedBC>();
-  params.addRequiredParam<Real>("T_coolant", "The temperature of the bulk coolant");
+  params.addRequiredCoupledVar("T_coolant", "The temperature of the bulk coolant");
   params.addRequiredParam<Real>("h_convection_coolant", "The heat transfer coefficient of the bulk coolant");
 
   return params;
@@ -33,7 +33,7 @@ InputParameters validParams<CRUDCoolantNeumannBC>()
 
 CRUDCoolantNeumannBC::CRUDCoolantNeumannBC(const std::string & name, InputParameters parameters)
  :IntegratedBC(name, parameters),
-  _T_coolant(getParam<Real>("T_coolant")),
+  _T_coolant(coupledValue("T_coolant")),
   _h_convection_coolant(getParam<Real>("h_convection_coolant"))
   
 
@@ -42,5 +42,5 @@ CRUDCoolantNeumannBC::CRUDCoolantNeumannBC(const std::string & name, InputParame
 Real
 CRUDCoolantNeumannBC::computeQpResidual()
 {
-  return _h_convection_coolant * _test[_i][_qp] * (_u[_qp] - _T_coolant);
+  return _h_convection_coolant * _test[_i][_qp] * (_u[_qp] - _T_coolant[_qp]);
 }

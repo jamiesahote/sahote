@@ -43,7 +43,7 @@ protected:
   
 private:
 
-  Real _T_coolant;
+  VariableValue & _T_coolant;
   Real _h_convection_coolant;
 
 };
