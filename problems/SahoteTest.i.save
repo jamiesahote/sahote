@@ -1,13 +1,13 @@
 [Mesh]
   type = FileMesh
-  file = /home/jsahote/projects/sahote/problems/Structure.e
+  file = Structure.e
 []
 
 [Variables]
   [./Temperature]
     order = FIRST
     family = LAGRANGE
-    initial_condition = 500
+    initial_condition = 700
   [../]
 []
 
@@ -33,7 +33,7 @@
 [Functions]
   [./HeatGenerationFunction]
     type = PiecewiseMultilinear
-    data_file = /home/jsahote/projects/sahote/problems/IonBeamEnergy.txt
+    data_file = IonBeamEnergy.txt
   [../]
 []
 
@@ -85,7 +85,7 @@
     type = BeamHeating
     variable = HeatGeneration
     ionic_heating = HeatGenerationPerIon
-    beam_current = 1e-9 # Specify your total beam current in Amps
+    beam_current = 2e-6 # Specify your total beam current in Amps
     beam_radius = 0.003 # Specify your beam radius in metres
   [../]
   [./HeatAux]
@@ -143,28 +143,25 @@
     h_convection_coolant = 50
   [../]
   [./StructureCoolant]
-    type = CRUDCoolantNeumannBC
+    type = CoolantNeumannBC
     variable = Temperature
     boundary = Structure-Coolant
     T_coolant = 500
-    h_convection_coolant = 376.8626775939
-  
+    heat_transfer_coefficient = HeatAux
   [../]
   [./CoolantSample]
-    type = CRUDCoolantNeumannBC
+    type = CoolantNeumannBC
     variable = Temperature
     boundary = Coolant-Pincer
     T_coolant = 500
-    h_convection_coolant = 376.8626775939
-
+    heat_transfer_coefficient = HeatAux
   [../]
   [./CoolantPincer]
-    type = CRUDCoolantNeumannBC
+    type = CoolantNeumannBC
     variable = Temperature
     boundary = Coolant-Sample
     T_coolant = 500
-    h_convection_coolant = 376.8626775939
-
+    heat_transfer_coefficient = HeatAux
   [../]
   [./CoolantEntry]
     type = DirichletBC
@@ -193,14 +190,14 @@
   solve_type = PJFNK
   petsc_options_iname = '-pc_type -pc_hypre_type'
   petsc_options_value = 'hypre boomeramg'
-  l_max_its = 3+-0
+  l_max_its = 10
   l_tol = 1e-2
   nl_rel_step_tol = 1e-50
   nl_rel_tol = 1e-3
 []
 
 [Outputs]
-  file_base = /home/jsahote/projects/sahote/problems/Sahote
+  file_base = Sahote
   exodus = true
   [./Console]
     type = Console
