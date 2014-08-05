@@ -192,7 +192,7 @@
 []
 
 [Outputs]
-  file_base = Sahote
+  file_base = beamcurrent
   exodus = true
   [./Console]
     type = Console
