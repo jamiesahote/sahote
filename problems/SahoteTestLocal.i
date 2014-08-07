@@ -25,7 +25,7 @@
   [./HeatAux]
     order = CONSTANT
     family = MONOMIAL
-    initial_condition = 1
+    initial_condition = 0
   [../]
 
 []
@@ -54,7 +54,7 @@
     type = Convection
     variable = Temperature
     block = Coolant
-    velocity = 1
+    velocity = 2
   [../]
   [./HeatConduction-Pincers]
     type = MatPropDiffusion
@@ -85,13 +85,13 @@
     type = BeamHeating
     variable = HeatGeneration
     ionic_heating = HeatGenerationPerIon
-    beam_current = 1e-3 # Specify your total beam current in Amps
+    beam_current = 1e-7 # Specify your total beam current in Amps
     beam_radius = 0.003 # Specify your beam radius in metres
   [../]
   [./HeatAux]
     type = MaterialHeatAux
     variable = HeatAux
-    velocity = 1
+    velocity = 2
     material_type = KNO3
   [../]
 []
@@ -192,7 +192,7 @@
 []
 
 [Outputs]
-  file_base = Sahote
+  file_base = beamcurrent
   exodus = true
   [./Console]
     type = Console
