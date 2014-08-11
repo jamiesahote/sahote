@@ -9,6 +9,10 @@
     family = LAGRANGE
     initial_condition = 500
   [../]
+  [./convected]
+    order = FIRST
+    family = LAGRANGE
+  [../]
 []
 
 [AuxVariables]
@@ -35,9 +39,21 @@
     type = PiecewiseMultilinear
     data_file = /home/jsahote/projects/sahote/problems/IonBeamEnergy.txt
   [../]
+  [./VelocityFunction]
+    type = ParsedFunction
+    vals = 1  ## velocity of the coolant
+    value = -0.0262136001 * a * a + 2.08902489084122* exp -011 * a + 100000
+    vars = a
+  [../]
+
 []
 
 [Kernels]
+  [./Velocity-Field]
+    type = Diffusion
+    variable = convected
+  [../]
+
   [./HeatConduction-Structure]
     type = MatPropDiffusion
     variable = Temperature
@@ -85,13 +101,13 @@
     type = BeamHeating
     variable = HeatGeneration
     ionic_heating = HeatGenerationPerIon
-    beam_current = 1e-6 # Specify your total beam current in Amps
+    beam_current = 1e-9 # Specify your total beam current in Amps
     beam_radius = 0.003 # Specify your beam radius in metres
   [../]
   [./HeatAux]
     type = MaterialHeatAux
     variable = HeatAux
-    velocity = 1
+    velocity = convected
     material_type = KNO3
   [../]
 []
@@ -130,6 +146,18 @@
 []
 
 [BCs]
+  [./bottom_convected]
+    type = DirichletBC
+    variable = convected
+    boundary = 'Coolant-Entry'
+    value = 1e5		## Enter inlet pressure in Pa
+  [../]
+  [./top_convected]
+    type = FunctionDirichletBC
+    variable = convected
+    boundary = 'Coolant-Exit'
+    function = VelocityFunction
+  [../]
   [./StructureAir]
     type = CRUDCoolantNeumannBC
     variable = Temperature
@@ -185,10 +213,10 @@
   solve_type = PJFNK
   petsc_options_iname = '-pc_type -pc_hypre_type'
   petsc_options_value = 'hypre boomeramg'
-  l_max_its = 10
-  l_tol = 1e-2
+  l_max_its = 20
+  l_tol = 1e-3
   nl_rel_step_tol = 1e-50
-  nl_rel_tol = 1e-3
+  nl_rel_tol = 1e-4
 []
 
 [Outputs]
