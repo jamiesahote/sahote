@@ -41,7 +41,7 @@
   [../]
   [./VelocityFunction]
     type = ParsedFunction
-    vals = 1  ## velocity of the coolant
+    vals = 2  ## velocity of the coolant
     value = -0.0262136001 * a * a + 2.08902489084122* exp -011 * a + 100000
     vars = a
   [../]
@@ -70,7 +70,7 @@
     type = Convection
     variable = Temperature
     block = Coolant
-    velocity = 1
+    velocity = 2
   [../]
   [./HeatConduction-Pincers]
     type = MatPropDiffusion
@@ -220,7 +220,7 @@
 []
 
 [Outputs]
-  file_base = beamcurrent
+  file_base = 1e-
   exodus = true
   [./Console]
     type = Console
