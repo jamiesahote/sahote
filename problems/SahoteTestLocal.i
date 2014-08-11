@@ -40,10 +40,10 @@
     data_file = IonBeamEnergy.txt
   [../]
   [./VelocityFunction]
-    type                         = ParsedFunction
-    vals                         = 1
-    value                        = -0.0262136001 * a * a + 2.08902489084122* exp -011 * a + 100000
-    vars                         = a
+    type = ParsedFunction
+    vals = 1  ## velocity of the coolant
+    value = -0.0262136001 * a * a + 2.08902489084122* exp -011 * a + 100000
+    vars = a
   [../]
 
 []
@@ -70,7 +70,7 @@
     type = Convection
     variable = Temperature
     block = Coolant
-    velocity = 1.01
+    velocity = 1
   [../]
   [./HeatConduction-Pincers]
     type = MatPropDiffusion

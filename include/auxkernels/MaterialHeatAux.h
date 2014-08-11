@@ -40,7 +40,7 @@ public:
 protected:
   virtual Real computeValue();
 
-  VariableGradient & _velocity;
+  VariableValue & _velocity;
   MooseEnum  _material_type;  
 
 };
