@@ -35,7 +35,7 @@ protected:
 
   virtual Real computeQpJacobian();
 
-  Real _velocity;
+  VariableGradient & _velocity;
   MaterialProperty<Real> &  _density;
   MaterialProperty<Real> &  _specific_heat_capacity;
 

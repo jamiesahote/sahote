@@ -19,14 +19,14 @@ InputParameters validParams<Convection>()
 {
   InputParameters params = validParams<Kernel>();
 
-  params.addParam<Real>("velocity",1, "The velocity of the coolant in metres per second.");
+  params.addRequiredCoupledVar("velocity", "The velocity of the coolant in metres per second.");
   return params;
 }
 
 Convection::Convection(const std::string & name,
                        InputParameters parameters) :
     Kernel(name, parameters),
-    _velocity(getParam<Real>("velocity")),
+    _velocity(coupledGradient("velocity")),
     _density(getMaterialProperty<Real>("Density")),
     _specific_heat_capacity(getMaterialProperty<Real>("SpecificHeatCapacity"))
 
@@ -38,8 +38,8 @@ Convection::computeQpResidual()
   return -_test[_i][_qp]
     * _density[_qp]
     * _specific_heat_capacity[_qp]
-    * _velocity
-    * _grad_u[_qp](1);
+    * _velocity[_qp]
+    * _grad_u[_qp];
 }
 
 Real
@@ -48,6 +48,6 @@ Convection::computeQpJacobian()
   return -_test[_i][_qp]
     * _density[_qp]
     * _specific_heat_capacity[_qp]
-    * _velocity
-    * _grad_phi[_j][_qp](1);
+    * _velocity[_qp]
+    * _grad_phi[_j][_qp];
 }

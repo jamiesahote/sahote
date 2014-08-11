@@ -9,6 +9,10 @@
     family = LAGRANGE
     initial_condition = 500
   [../]
+  [./convected]
+    order = FIRST
+    family = LAGRANGE
+  [../]
 []
 
 [AuxVariables]
@@ -25,7 +29,7 @@
   [./HeatAux]
     order = CONSTANT
     family = MONOMIAL
-    initial_condition = 0
+    initial_condition = 1
   [../]
 
 []
@@ -35,9 +39,21 @@
     type = PiecewiseMultilinear
     data_file = IonBeamEnergy.txt
   [../]
+  [./VelocityFunction]
+    type                         = ParsedFunction
+    vals                         = 1
+    value                        = -0.0262136001 * a * a + 2.08902489084122* exp -011 * a + 100000
+    vars                         = a
+  [../]
+
 []
 
 [Kernels]
+  [./Velocity-Field]
+    type = Diffusion
+    variable = convected
+  [../]
+
   [./HeatConduction-Structure]
     type = MatPropDiffusion
     variable = Temperature
@@ -54,7 +70,7 @@
     type = Convection
     variable = Temperature
     block = Coolant
-    velocity = 2
+    velocity = 1.01
   [../]
   [./HeatConduction-Pincers]
     type = MatPropDiffusion
@@ -91,7 +107,7 @@
   [./HeatAux]
     type = MaterialHeatAux
     variable = HeatAux
-    velocity = 2
+    velocity = convected
     material_type = KNO3
   [../]
 []
@@ -130,6 +146,18 @@
 []
 
 [BCs]
+  [./bottom_convected]
+    type = DirichletBC
+    variable = convected
+    boundary = 'Coolant-Entry'
+    value = 1e5		## Enter inlet pressure in Pa
+  [../]
+  [./top_convected]
+    type = FunctionDirichletBC
+    variable = convected
+    boundary = 'Coolant-Exit'
+    function = VelocityFunction
+  [../]
   [./StructureAir]
     type = CRUDCoolantNeumannBC
     variable = Temperature
@@ -185,10 +213,10 @@
   solve_type = PJFNK
   petsc_options_iname = '-pc_type -pc_hypre_type'
   petsc_options_value = 'hypre boomeramg'
-  l_max_its = 10
-  l_tol = 1e-2
+  l_max_its = 20
+  l_tol = 1e-3
   nl_rel_step_tol = 1e-50
-  nl_rel_tol = 1e-3
+  nl_rel_tol = 1e-4
 []
 
 [Outputs]
