@@ -10,6 +10,7 @@
 // Include auxkernel header files
 #include "BeamHeating.h"
 #include "MaterialHeatAux.h"
+#include "VelocityAux.h"
 
 // Next come the materials
 #include "SahoteMaterial.h"
@@ -58,6 +59,7 @@ SahoteApp::registerObjects(Factory & factory)
   // Register auxkernels
   registerAux(BeamHeating);
   registerAux(MaterialHeatAux);
+  registerAux(VelocityAux); 
 
   // Register materials classes
   registerMaterial(SahoteMaterial);

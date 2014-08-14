@@ -9,9 +9,11 @@
     family = LAGRANGE
     initial_condition = 500
   [../]
-  [./convected]
+  [./pressure]
     order = FIRST
     family = LAGRANGE
+    block = 'Coolant'
+    initial_condition = 1e5
   [../]
 []
 
@@ -31,7 +33,11 @@
     family = MONOMIAL
     initial_condition = 1
   [../]
-
+  [./VelocityAux]
+    order = CONSTANT
+    family = MONOMIAL
+    initial_condition = 1
+  [../]
 []
 
 [Functions]
@@ -39,21 +45,14 @@
     type = PiecewiseMultilinear
     data_file = IonBeamEnergy.txt
   [../]
-  [./VelocityFunction]
-    type = ParsedFunction
-    vals = 2  ## velocity of the coolant
-    value = -0.0262136001 * a * a + 2.08902489084122* exp -011 * a + 100000
-    vars = a
-  [../]
-
 []
 
 [Kernels]
   [./Velocity-Field]
     type = Diffusion
-    variable = convected
+    variable = pressure
+    block = 'Coolant'
   [../]
-
   [./HeatConduction-Structure]
     type = MatPropDiffusion
     variable = Temperature
@@ -70,7 +69,7 @@
     type = Convection
     variable = Temperature
     block = Coolant
-    velocity = 2
+    pressure = pressure
   [../]
   [./HeatConduction-Pincers]
     type = MatPropDiffusion
@@ -101,14 +100,20 @@
     type = BeamHeating
     variable = HeatGeneration
     ionic_heating = HeatGenerationPerIon
-    beam_current = 1e-7 # Specify your total beam current in Amps
+    beam_current = 1e-6 # Specify your total beam current in Amps
     beam_radius = 0.003 # Specify your beam radius in metres
   [../]
   [./HeatAux]
     type = MaterialHeatAux
     variable = HeatAux
-    velocity = convected
+    block = 'Coolant'
+    velocity = pressure
     material_type = KNO3
+  [../]
+  [./VelocityAux]
+    type = VelocityAux
+    variable = VelocityAux
+    pressure = pressure
   [../]
 []
 
@@ -146,17 +151,17 @@
 []
 
 [BCs]
-  [./bottom_convected]
+  [./Coolant_Entry]
     type = DirichletBC
-    variable = convected
+    variable = pressure
     boundary = 'Coolant-Entry'
     value = 1e5		## Enter inlet pressure in Pa
   [../]
-  [./top_convected]
-    type = FunctionDirichletBC
-    variable = convected
+  [./Coolant_Exit]
+    type = DirichletBC
+    variable = pressure
     boundary = 'Coolant-Exit'
-    function = VelocityFunction
+    value = 9.992e4	## Enter outlet pressure in Pa
   [../]
   [./StructureAir]
     type = CRUDCoolantNeumannBC

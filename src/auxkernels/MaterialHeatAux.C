@@ -27,7 +27,7 @@ InputParameters validParams<MaterialHeatAux>()
 
 MaterialHeatAux::MaterialHeatAux(const std::string & name, InputParameters parameters)
   :AuxKernel(name, parameters),
-     _velocity(coupledValue("velocity")),
+     _velocity(coupledGradient("velocity")),
      _material_type(getParam<MooseEnum>("material_type"))
 
 
@@ -37,43 +37,44 @@ Real
 MaterialHeatAux::computeValue()
 {
     double value = 3000;  
+    _velocity[_qp] /= 1000 * -1;	// This is us faking out the velocity divided by 1000, because the "pressure" kernel needs something to do & to turn the negative velocity into a positive number???
  
 
   if (_material_type == "Na")
   {
      
-     value = -156.0388387064 * _velocity[_qp] * _velocity[_qp] + 8912.90292955163 * _velocity[_qp] + 4024.9331520837;
+     value = -179.2415573376 * _velocity[_qp](1) * _velocity[_qp](1) + 10238.2369628439 * _velocity[_qp](1) + 4623.4340907715;
   }
 
 else if (_material_type == "Pb")
   {
      
-     value = -2747.1377887 * _velocity[_qp] * _velocity[_qp] + 156915.885291833 * _velocity[_qp] + 122.9514881055;
+     value = -3155.6326588782 * _velocity[_qp](1) * _velocity[_qp](1) + 180249.019307632 * _velocity[_qp](1) + 81397.7507767655;
   }
 else if (_material_type == "KNO3")
   {
      
-     value = -4.7665903249 * _velocity[_qp] * _velocity[_qp] + 272.2665545663 * _velocity[_qp] + 122.9514881055; 
+     value = -5.4753744652 * _velocity[_qp](1) * _velocity[_qp](1) + 312.752143351 * _velocity[_qp](1) + 141.2341721312; 
   }
 else if (_material_type == "Bi")
   {
      
-     value = -3073.9812210367 * _velocity[_qp] * _velocity[_qp] + 160689.67565352 * _velocity[_qp] + 67320.4187749379;
+     value = -3531.0771718966 * _velocity[_qp](1) * _velocity[_qp](1) + 184583.966088206 * _velocity[_qp](1) + 77330.8543044832;
   }
 else if (_material_type == "Pb-Bi")
   {
      
-     value = -2712.8765609881 * _velocity[_qp] * _velocity[_qp] + 154958.891759794 * _velocity[_qp] + 69977.1088938927;
+     value = -3116.2768429171 * _velocity[_qp](1) * _velocity[_qp](1) + 178001.024056639 * _velocity[_qp](1) + 80382.5898738632;
   }
 else if (_material_type == "Hg")
   {
      
-     value = -115.7725627711 * _velocity[_qp] * _velocity[_qp] + 6612.9024376516 * _velocity[_qp] + 2986.2874516524;
+     value = -132.987752409 * _velocity[_qp](1) * _velocity[_qp](1) + 7596.2301518863 * _velocity[_qp](1) + 2986.2874516524;
   }
 else if (_material_type == "Glycerine")
   {
      
-     value = 2123.6513547203;
+     value = 1891.9582696973;
 
   }
 else if (_material_type == "KCSN")
@@ -84,12 +85,12 @@ else if (_material_type == "KCSN")
 else if (_material_type == "Rb")
   {
      
-     value = -210.22314878 * _velocity[_qp] * _velocity[_qp] + 12007.8983979054 * _velocity[_qp] + 5422.586624326;
+     value = -241.482984839 * _velocity[_qp](1) * _velocity[_qp](1) + 13793.4531366455 * _velocity[_qp](1) + 6228.9163351921;
   }
 else if (_material_type == "Cs")
   {
      
-     value = -80.502811267 * _velocity[_qp] * _velocity[_qp] + 4595.3022585233 * _velocity[_qp] + 2076.5242589016;
+     value = -92.4734468751 * _velocity[_qp](1) * _velocity[_qp](1) + 5282.0622401449 * _velocity[_qp](1) + 2285.3000003117;
   } 
  
 else 

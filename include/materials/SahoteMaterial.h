@@ -42,7 +42,6 @@ private:
 
 // Simple parameters to be used all over
   VariableValue & _temperature;
-  //Real _velocity;
 
   
 
@@ -53,12 +52,9 @@ private:
 
   // Parameters specifying material properties used for both structural/sample materials and cooling fluids
   MaterialProperty<Real> & _density;
-  //MaterialProperty<Real> & _elemental composition;
   MaterialProperty<Real> & _specific_heat_capacity;
   MaterialProperty<Real> &  _thermal_conductivity;
 
-  // Parameters used for structural/sample material only
-  //MaterialProperty<Real> & _grain_size;
 
   // Paramaters used for cooling fluids only
   MaterialProperty<Real> & _boiling_point;
@@ -66,13 +62,10 @@ private:
   MaterialProperty<Real> & _dynamic_viscosity;
   MaterialProperty<Real> & _surface_tension;
   MaterialProperty<Real> & _latent_heat_of_vapourisation;
-  //MaterialProperty<Real> & _heat_transfer_coefficient;
 
   MooseEnum _material_type;
 
 
-  // Coupled variables used in calculation (TBD)
-//  VariableValue & _T;
 
 };
 
