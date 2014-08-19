@@ -1,6 +1,6 @@
 [Mesh]
   type = FileMesh
-  file = Structure.e
+  file = /home/jamie/projects/sahote/problems/Structure.e
 []
 
 [Variables]
@@ -43,7 +43,7 @@
 [Functions]
   [./HeatGenerationFunction]
     type = PiecewiseMultilinear
-    data_file = IonBeamEnergy.txt
+    data_file = /home/jamie/projects/sahote/problems/IonBeamEnergy.txt
   [../]
 []
 
@@ -62,25 +62,25 @@
   [./HeatConduction-Coolant]
     type = MatPropDiffusion
     variable = Temperature
-    block = Coolant
+    block = 'Coolant'
     diffusivity = ThermalConductivity
   [../]
   [./Convection-Coolant]
     type = Convection
     variable = Temperature
-    block = Coolant
+    block = 'Coolant'
     pressure = pressure
   [../]
   [./HeatConduction-Pincers]
     type = MatPropDiffusion
     variable = Temperature
-    block = Pincers
+    block = 'Pincers'
     diffusivity = ThermalConductivity
   [../]
   [./HeatConduction-Sample]
     type = MatPropDiffusion
     variable = Temperature
-    block = Sample
+    block = 'Sample'
     diffusivity = ThermalConductivity
   [../]
   [./RadiationHeatSource]
@@ -161,7 +161,7 @@
     type = DirichletBC
     variable = pressure
     boundary = 'Coolant-Exit'
-    value = 9.992e4	## Enter outlet pressure in Pa
+    value = 9.998e4	## Enter outlet pressure in Pa
   [../]
   [./StructureAir]
     type = CRUDCoolantNeumannBC
@@ -199,6 +199,18 @@
   [../]
 []
 
+[VectorPostprocessors]
+  [./SampleTemperature]
+    type = LineValueSampler
+    variable = Temperature
+    num_points = 25
+    start_point = '0 0 0.000250000011874363'
+    end_point = '0 0 -0.000250000011874363'
+    sort_by = id
+  [../]
+[]
+
+
 [Preconditioning]
   [./smp]
     type = SMP
@@ -227,6 +239,7 @@
 [Outputs]
   file_base = 1e-
   exodus = true
+  csv = true
   [./Console]
     type = Console
     linear_residuals = true

@@ -14,7 +14,7 @@ done <$FILE
 
 ##rm IonBeamEnergy.txt
 touch IonBeamEnergy.txt
-Rbeam=$(grep -r "beam_radius" ~/projects/sahote/problems/SahoteTest.i | awk '{print $3}')
+Rbeam=$(grep -r "beam_radius" ~/projects/sahote/problems/SahoteTestLocal.i | awk '{print $3}')
 
 echo "Beam radius is "$Rbeam;
 

@@ -33,9 +33,9 @@ Convection::Convection(const std::string & name,
 {}
 
 Real
-Convection::computeQpResidual()
+Convection::computeQpResidual()	
 {
-_velocity[_qp] = 1e10;
+_velocity[_qp] = 1e10;  /// ASK MIKE WHYYYYYYYYYYYYYYYYYYYYYYYYY
 
   return -_test[_i][_qp]
     * _density[_qp]

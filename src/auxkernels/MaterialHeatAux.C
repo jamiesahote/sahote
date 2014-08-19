@@ -37,7 +37,7 @@ Real
 MaterialHeatAux::computeValue()
 {
     double value = 3000;  
-    _velocity[_qp] /= 1000 * -1;	// This is us faking out the velocity divided by 1000, because the "pressure" kernel needs something to do & to turn the negative velocity into a positive number???
+    _velocity[_qp] /=  1000 * -1;	// This is us faking out the velocity divided by 1000, because the "pressure" kernel needs something to do & to turn the negative velocity into a positive number???  //ASK MIKE WHYYYYYYYYYYYYYYY
  
 
   if (_material_type == "Na")
@@ -53,7 +53,7 @@ else if (_material_type == "Pb")
   }
 else if (_material_type == "KNO3")
   {
-     
+     //value = 50000 - 0 * _velocity[_qp](1);
      value = -5.4753744652 * _velocity[_qp](1) * _velocity[_qp](1) + 312.752143351 * _velocity[_qp](1) + 141.2341721312; 
   }
 else if (_material_type == "Bi")

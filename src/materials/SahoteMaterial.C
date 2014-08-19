@@ -19,7 +19,7 @@ InputParameters validParams<SahoteMaterial>()
 {
   InputParameters params = validParams<Material>();
   params.addRequiredCoupledVar("temperature", "The temperature for the simulation");
-  MooseEnum material_type("316SS, 304SS, 308LSS, 347SS, LAS, CS, Stellite, CuNi9010, Titanium, Inconel, Incoloy, Hastelloy, SA230, Graphite, T91, PE16, Na, Pb, Pb-Bi, KNO3, KCSN, Hg, Rb, Cs, Glycerine,");
+  MooseEnum material_type("316SS, 304SS, 308LSS, 347SS, LAS, CS, Stellite, CuNi9010, Titanium, Inconel, Incoloy, Hastelloy, SA230, Graphite, T91, PE16, W, Cu, Na, Pb, Pb-Bi, KNO3, KCSN, Hg, Rb, Cs, Glycerine,");
   params.addParam<MooseEnum>("material_type",material_type,"This string specifies the material to return properties."); 
 
 
@@ -149,8 +149,20 @@ SahoteMaterial::computeQpProperties()
   else if (_material_type == "PE16")
   {
      _density[_qp] = 8000; //in kg/m^3
-     _specific_heat_capacity[_qp] = 544; //between 20-400 deg C HOW?? //in J/kgK
+     _specific_heat_capacity[_qp] = 544; //between 20-400 deg C //in J/kgK
      _thermal_conductivity[_qp] = 2.3788666667 * _temperature[_qp] - 1334.2506; //in W/mK
+  }
+  else if (_material_type == "W")
+  {
+     _density[_qp] = 19300; //in kg/m^3
+     _specific_heat_capacity[_qp] = 134; //in J/kgK
+     _thermal_conductivity[_qp] = 128; ///at 600 deg C //in W/mK
+  }
+  else if (_material_type == "Cu")
+  {
+     _density[_qp] = 8950; //in kg/m^3
+     //_specific_heat_capacity[_qp] = 544; //between 20-400 deg C //in J/kgK
+     _thermal_conductivity[_qp] = 391; //in W/mK
   }
   else if (_material_type == "Na")
   {

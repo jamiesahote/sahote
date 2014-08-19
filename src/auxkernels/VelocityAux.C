@@ -35,5 +35,5 @@ VelocityAux::computeValue()
 
 // Returns the gradient of the pressure field
 
-    return (_grad_P[_qp](1));   //the minus 1 is to translate the negative gradient into a positive velocity
+    return (_grad_P[_qp](1));   
 }
