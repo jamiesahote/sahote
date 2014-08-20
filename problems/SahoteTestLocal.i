@@ -161,7 +161,7 @@
     type = DirichletBC
     variable = pressure
     boundary = 'Coolant-Exit'
-    value = 9.998e4	## Enter outlet pressure in Pa
+    value = 9.99e4	## Enter outlet pressure in Pa
   [../]
   [./StructureAir]
     type = CRUDCoolantNeumannBC
