@@ -43,7 +43,7 @@
 [Functions]
   [./HeatGenerationFunction]
     type = PiecewiseMultilinear
-    data_file = /home/jamie/projects/sahote/problems/IonBeamEnergy.txt
+    data_file = /home/jamie/projects/sahote/problems/IonBeamEnergyPb.txt
   [../]
 []
 
@@ -62,25 +62,25 @@
   [./HeatConduction-Coolant]
     type = MatPropDiffusion
     variable = Temperature
-    block = 'Coolant'
+    block = Coolant
     diffusivity = ThermalConductivity
   [../]
   [./Convection-Coolant]
     type = Convection
     variable = Temperature
-    block = 'Coolant'
+    block = Coolant
     pressure = pressure
   [../]
   [./HeatConduction-Pincers]
     type = MatPropDiffusion
     variable = Temperature
-    block = 'Pincers'
+    block = Pincers
     diffusivity = ThermalConductivity
   [../]
   [./HeatConduction-Sample]
     type = MatPropDiffusion
     variable = Temperature
-    block = 'Sample'
+    block = Sample
     diffusivity = ThermalConductivity
   [../]
   [./RadiationHeatSource]
@@ -100,7 +100,7 @@
     type = BeamHeating
     variable = HeatGeneration
     ionic_heating = HeatGenerationPerIon
-    beam_current = 1e-6 # Specify your total beam current in Amps
+    beam_current = 1e-9 # Specify your total beam current in Amps
     beam_radius = 0.003 # Specify your beam radius in metres
   [../]
   [./HeatAux]
@@ -161,7 +161,7 @@
     type = DirichletBC
     variable = pressure
     boundary = 'Coolant-Exit'
-    value = 9.98e4	## Enter outlet pressure in Pa
+    value = 9.998e4	## Enter outlet pressure in Pa
   [../]
   [./StructureAir]
     type = CRUDCoolantNeumannBC

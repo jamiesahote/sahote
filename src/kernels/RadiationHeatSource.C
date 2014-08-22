@@ -19,7 +19,7 @@ InputParameters validParams<RadiationHeatSource>()
 {
   InputParameters params = validParams<Kernel>();
   params.addRequiredCoupledVar("PrimarySource", "The primary source of this heat");
-  params.addCoupledVar("SecondarySource", 1, "The optional secondary source of this defect");
+  params.addCoupledVar("SecondarySource", 0, "The optional secondary source of this defect");
   return params;
 }
 
