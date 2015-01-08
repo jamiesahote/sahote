@@ -1,0 +1,46 @@
+==> SRIM-2013.00 This file controls TRIM Calculations.
+Ion: Z1 ,  M1,  Energy (keV), Angle,Number,Bragg Corr,AutoSave Number.
+     1   1.008         "$i"       0   25000        1    10000
+Cascades(1=No;2=Full;3=Sputt;4-5=Ions;6-7=Neutrons), Random Number Seed, Reminders
+                      1                                   0       0
+Diskfiles (0=no,1=yes): Ranges, Backscatt, Transmit, Sputtered, Collisions(1=Ion;2=Ion+Recoils), Special EXYZ.txt file
+                          0       0           0       0               0                               0
+Target material : Number of Elements & Layers
+"H (10) into Stainless Steel+KNO3+Stainle"      15               5
+PlotType (0-5); Plot Depths: Xmin, Xmax(Ang.) [=0 0 for Viewing Full Target]
+       0                         0           5E+11
+Target Elements:    Z   Mass(amu)
+Atom 1 = Cr =      24  51.996
+Atom 2 = Fe =      26  55.847
+Atom 3 = Ni =      28   58.69
+Atom 4 = O =       8  15.999
+Atom 5 = N =       7  14.007
+Atom 6 = K =      19  39.098
+Atom 7 = Cr =      24  51.996
+Atom 8 = Fe =      26  55.847
+Atom 9 = Ni =      28   58.69
+Atom 10 = O =       8  15.999
+Atom 11 = N =       7  14.007
+Atom 12 = K =      19  39.098
+Atom 13 = Cr =      24  51.996
+Atom 14 = Fe =      26  55.847
+Atom 15 = Ni =      28   58.69
+Layer   Layer Name /               Width Density    Cr(24)  Fe(26)  Ni(28)    O(8)    N(7)   K(19)  Cr(24)  Fe(26)  Ni(28)    O(8)    N(7)   K(19)  Cr(24)  Fe(26)  Ni(28)
+Numb.   Description                (Ang) (g/cm3)    Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich
+ 1      "Stainless Steel"           100000000000  8     .08     .74     .18       0       0       0       0       0       0       0       0       0       0       0       0
+ 2      "KNO3"           <COOLTHICK>  2.1       0       0       0      .6      .2      .2       0       0       0       0       0       0       0       0       0
+ 3      "Stainless Steel"           "$j"  8       0       0       0       0       0       0     .08     .74     .18       0       0       0       0       0       0
+ 4      "KNO3"           <COOLTHICK>  2.1       0       0       0       0       0       0       0       0       0      .6      .2      .2       0       0       0
+ 5      "Stainless Steel"           100000000000  8       0       0       0       0       0       0       0       0       0       0       0       0     .08     .74     .18
+0  Target layer phases (0=Solid, 1=Gas)
+0 0 0 0 0 
+Target Compound Corrections (Bragg)
+ 1   1   1   1   1  
+Individual target atom displacement energies (eV)
+      25      25      25      28      28      25      25      25      25      28      28      25      25      25      25
+Individual target atom lattice binding energies (eV)
+       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3
+Individual target atom surface binding energies (eV)
+    4.12    4.34    4.46       2       2     .93    4.12    4.34    4.46       2       2     .93    4.12    4.34    4.46
+Stopping Power Version (1=2011, 0=2011)
+ 0 
