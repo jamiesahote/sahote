@@ -2,7 +2,7 @@
 
 
 for i in {1..2..1}  ## energies
-do         
+do
         for j in {1..2..1}  ##sample thickness
 	do
 	    for k in {1..2..1} ##coolant thickness
