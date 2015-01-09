@@ -1,11 +1,11 @@
 #!/bin/bash                                                                                     
 
 
-for energies in {1..2}  ## energies
+for energies in {10000..40000..5000}  ## energies
 do
-    for j in {1..2}  ##sample thickness
+    for j in {0.5..3..0.5}  ##sample thickness
     do
-	for k in {1..2} ##coolant thickness
+	for k in {0.5..3..0.5} ##coolant thickness
         do
 	    sed "s/<BEAMENERGY>/$energies/"  TRIM-Script-sample-SS316.IN > TRIM1.IN
             sed "s/<SAMPTHICK>/$j/" TRIM1.IN > TRIM2.IN
