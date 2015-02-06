@@ -1,0 +1,38 @@
+
+reset
+brick x 20 y 20 z 3
+brick x 20 y 4 z 0.5
+brick x 20 y 20 z 5
+subtract volume 2  from volume 1   keep
+delete volume 1
+subtract volume 4 2 from volume 3 keep
+delete volume 3
+webcut volume 2  with cylinder radius 1.5 axis z
+webcut volume all  with plane xplane offset 0 noimprint nomerge 
+webcut volume all with plane zplane offset 0.25 noimprint nomerge
+webcut volume all with plane zplane offset -0.25 noimprint nomerge
+imprint tolerant volume all
+merge all
+surface 100 106 size 0.1
+surface 100 106 scheme pave
+mesh surface 100 106
+volume 7 scheme sweep source surface 100 target surface 102 
+volume 14 scheme sweep source surface 106 target surface 104
+mesh volume 7 14
+curve 97 scheme pinpoint location 1 2 3 4 5 6 7 8 9.3 9.4 9.5 9.6 9.7 9.8 9.9 
+curve 100 scheme pinpoint location 0.1 0.2 0.3 0.4 0.5 0.6 0.7 2 3 4 5 6 7 8 9
+surface 51 scheme pave
+mesh surface 51 
+volume 2 scheme sweep source surface 51 target surface 53
+mesh volume 2
+curve 115 scheme pinpoint location 0.1 0.2 0.3 0.4 0.5 0.6 0.7 2 3 4 5 6 7 8 9 
+curve 116 scheme pinpoint location 1 2 3 4 5 6 7 8 9.3 9.4 9.5 9.6 9.7 9.8 9.9
+surface 58 scheme pave
+mesh surface 58 
+volume 8 scheme sweep source surface 58 target surface 56
+mesh volume 8
+volume 18 17 19 20 15 16 4 9 10 11 12 13 size 0.5
+mesh volume 18 17 19 20
+mesh volume 15 16 4 9
+mesh volume 10 11 12 13
+
