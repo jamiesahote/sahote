@@ -42,6 +42,7 @@ SahoteApp::~SahoteApp()
 {
 }
 
+extern "C" void SahoteApp__registerApps() { SahoteApp::registerApps(); }
 void
 SahoteApp::registerApps()
 {
