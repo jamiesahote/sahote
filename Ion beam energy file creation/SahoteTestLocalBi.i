@@ -240,11 +240,11 @@
   file_base = 1e-
   exodus = true
   csv = true
+  print_linear_residuals = true
+  print_perf_log = true
   [./Console]
     type = Console
-    linear_residuals = true
     all_variable_norms = true
-    perf_log = true
   [../]
 []
 
