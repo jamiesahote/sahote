@@ -26,9 +26,8 @@ InputParameters validParams<SahoteMaterial>()
   return params;
 }
 
-SahoteMaterial::SahoteMaterial(const std::string & name,
-                           InputParameters parameters)
-    :Material(name, parameters),
+SahoteMaterial::SahoteMaterial(const InputParameters & parameters)
+    :Material(parameters),
 
      // Get simple parameters from the input fil
      _temperature(coupledValue("temperature")),

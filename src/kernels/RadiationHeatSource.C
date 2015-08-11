@@ -23,9 +23,8 @@ InputParameters validParams<RadiationHeatSource>()
   return params;
 }
 
-RadiationHeatSource::RadiationHeatSource(const std::string & name,
-                                   InputParameters parameters)
-  :Kernel(name,parameters),
+RadiationHeatSource::RadiationHeatSource(const InputParameters & parameters)
+  :Kernel(parameters),
    _primary_source(coupledValue("PrimarySource")),
    _secondary_source(coupledValue("SecondarySource"))
 

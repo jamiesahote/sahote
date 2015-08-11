@@ -25,8 +25,8 @@ InputParameters validParams<MaterialHeatAux>()
   return params;
 }
 
-MaterialHeatAux::MaterialHeatAux(const std::string & name, InputParameters parameters)
-  :AuxKernel(name, parameters),
+MaterialHeatAux::MaterialHeatAux(const InputParameters & parameters)
+  :AuxKernel(parameters),
      _velocity(coupledGradient("velocity")),
      _material_type(getParam<MooseEnum>("material_type"))
 

@@ -24,8 +24,8 @@ InputParameters validParams<BeamHeating>()
   return params;
 }
 
-BeamHeating::BeamHeating(const std::string & name, InputParameters parameters)
-  :AuxKernel(name, parameters),
+BeamHeating::BeamHeating(const InputParameters & parameters)
+  :AuxKernel(parameters),
    _ionic_heating(coupledValue("ionic_heating")),
    _beam_current(getParam<Real>("beam_current"))
 

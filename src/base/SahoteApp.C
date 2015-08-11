@@ -26,10 +26,9 @@ InputParameters validParams<SahoteApp>()
   return params;
 }
 
-SahoteApp::SahoteApp(const std::string & name, InputParameters parameters) :
-    MooseApp(name, parameters)
+SahoteApp::SahoteApp(InputParameters parameters) :
+    MooseApp(parameters)
 {
-  srand(processor_id());
 
   Moose::registerObjects(_factory);
   SahoteApp::registerObjects(_factory);

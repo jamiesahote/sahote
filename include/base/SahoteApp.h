@@ -11,7 +11,7 @@ InputParameters validParams<SahoteApp>();
 class SahoteApp : public MooseApp
 {
 public:
-  SahoteApp(const std::string & name, InputParameters parameters);
+  SahoteApp(InputParameters parameters);
   virtual ~SahoteApp();
 
   static void registerApps();

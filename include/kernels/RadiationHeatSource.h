@@ -31,8 +31,7 @@ class RadiationHeatSource : public Kernel
 {
 public:
 
-  RadiationHeatSource(const std::string & name,
-                   InputParameters parameters);
+  RadiationHeatSource(const InputParameters & parameters);
 
 protected:
   virtual Real computeQpResidual();

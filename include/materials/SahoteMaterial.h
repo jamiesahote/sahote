@@ -26,8 +26,7 @@ InputParameters validParams<SahoteMaterial>();
 class SahoteMaterial : public Material
 {
 public:
-  SahoteMaterial(const std::string & name,
-                  InputParameters parameters);
+  SahoteMaterial(const InputParameters & parameters);
 
 protected:
 //  virtual void initQpStatefulProperties();

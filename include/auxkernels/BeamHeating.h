@@ -35,7 +35,7 @@ public:
    * Factory constructor, takes parameters so that all derived classes can be built using the same
    * constructor.
    */
-  BeamHeating(const std::string & name, InputParameters parameters);
+  BeamHeating(const InputParameters & parameters);
 
 protected:
   virtual Real computeValue();

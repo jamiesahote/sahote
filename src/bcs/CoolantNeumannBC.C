@@ -26,8 +26,8 @@ InputParameters validParams<CoolantNeumannBC>()
   return params;
 }
 
-CoolantNeumannBC::CoolantNeumannBC(const std::string & name, InputParameters parameters)
- :IntegratedBC(name, parameters),
+CoolantNeumannBC::CoolantNeumannBC(const InputParameters & parameters)
+ :IntegratedBC(parameters),
   _T_coolant(coupledValue("T_coolant")),
   _heat_transfer_coefficient(coupledValue("heat_transfer_coefficient"))
   

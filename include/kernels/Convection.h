@@ -26,8 +26,7 @@ class Convection : public Kernel
 {
 public:
 
-  Convection(const std::string & name,
-             InputParameters parameters);
+  Convection(const InputParameters & parameters);
 
 protected:
 
@@ -36,8 +35,8 @@ protected:
   virtual Real computeQpJacobian();
 
   VariableGradient & _velocity;
-  MaterialProperty<Real> &  _density;
-  MaterialProperty<Real> &  _specific_heat_capacity;
+  const MaterialProperty<Real> &  _density;
+  const MaterialProperty<Real> &  _specific_heat_capacity;
 
 private:
 

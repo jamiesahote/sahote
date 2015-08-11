@@ -23,9 +23,8 @@ InputParameters validParams<Convection>()
   return params;
 }
 
-Convection::Convection(const std::string & name,
-                       InputParameters parameters) :
-    Kernel(name, parameters),
+Convection::Convection(const InputParameters & parameters) :
+    Kernel(parameters),
     _velocity(coupledGradient("pressure")),
     _density(getMaterialProperty<Real>("Density")),
     _specific_heat_capacity(getMaterialProperty<Real>("SpecificHeatCapacity"))
